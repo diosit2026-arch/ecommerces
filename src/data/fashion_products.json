@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "Fashion Product 1",
+    "category": "Fashion",
+    "brand": "Fashion",
+    "price": 0,
+    "originalPrice": 0,
+    "rating": 4,
+    "stock": 0,
+    "reviewsCount": 0,
+    "description": "",
+    "image": "",
+    "images": [],
+    "featureImages": [],
+    "isTrending": false,
+    "isDeal": false,
+    "sizes": [],
+    "measurements": {}
+  }
+]
