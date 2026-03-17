@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Loader from './components/ui/Loader';
@@ -11,11 +11,23 @@ const ProductListingPage = lazy(() => import('./pages/Products/ProductListingPag
 const ProductDetailsPage = lazy(() => import('./pages/Products/ProductDetailsPage'));
 const CartPage = lazy(() => import('./pages/Cart/CartPage'));
 const CheckoutPage = lazy(() => import('./pages/Checkout/CheckoutPage'));
+const OrderConfirmedPage = lazy(() => import('./pages/Checkout/OrderConfirmedPage'));
 const AccountPage = lazy(() => import('./pages/User/AccountPage'));
+
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [pathname, search]);
+
+  return null;
+}
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         
@@ -28,6 +40,7 @@ function App() {
                 <Route path="/products/:id" element={<ProductDetailsPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/order-confirmed" element={<OrderConfirmedPage />} />
                 <Route path="/account" element={<AccountPage />} />
                 
                 {/* 404 Fallback */}
@@ -35,9 +48,9 @@ function App() {
                   <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
                     <h1 className="text-6xl font-bold text-primary mb-4">404</h1>
                     <h2 className="text-2xl font-semibold text-white mb-6">Page Not Found</h2>
-                    <p className="text-gray-400 mb-8 max-w-md mx-auto">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+                    <p className="text-gray-400 mb-8 max-w-md mx-auto">The page you are looking for may have moved, been renamed, or is not available on NamshyCart right now.</p>
                     <a href="/" className="px-6 py-3 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition-colors">
-                      Go to Homepage
+                      Return to NamshyCart
                     </a>
                   </div>
                 } />

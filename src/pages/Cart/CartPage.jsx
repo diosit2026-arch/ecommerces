@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useCartStore } from '../../store/useCartStore';
+import Seo from '../../components/seo/Seo';
+import { siteUrl } from '../../utils/siteContent';
 
 const MotionDiv = motion.div;
 const FREE_SHIPPING_THRESHOLD = 4000;
@@ -19,6 +21,12 @@ const CartPage = () => {
   if (items.length === 0) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center bg-background px-4">
+        <Seo
+          title="Shopping Cart"
+          description="Review your NamshyCart shopping cart, discover recommended products, and continue to secure checkout."
+          keywords="NamshyCart cart, shopping cart, checkout, online shopping"
+          canonical={`${siteUrl}/cart`}
+        />
         <div className="text-center p-8 bg-surface rounded-2xl border border-gray-800 shadow-xl max-w-md w-full">
           <div className="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
             <ShoppingBag size={40} className="text-gray-400" />
@@ -40,9 +48,19 @@ const CartPage = () => {
 
   return (
     <div className="min-h-screen bg-background pt-8 pb-20">
+      <Seo
+        title="Shopping Cart"
+        description="Review items in your NamshyCart cart, update quantities, unlock free shipping, and proceed to secure checkout."
+        keywords="NamshyCart cart, shopping cart, secure checkout, free shipping"
+        canonical={`${siteUrl}/cart`}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-white">Your Shopping Cart</h1>
+          <div>
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Checkout ready</p>
+            <h1 className="text-3xl md:text-4xl font-extrabold text-white">Your NamshyCart Shopping Cart</h1>
+            <p className="mt-2 max-w-2xl text-sm leading-7 text-gray-400">Review your selected products, update quantities, and move to a cleaner secure checkout experience.</p>
+          </div>
           <button
             onClick={clearCart}
             className="text-sm font-medium text-gray-400 hover:text-red-500 transition-colors flex items-center"

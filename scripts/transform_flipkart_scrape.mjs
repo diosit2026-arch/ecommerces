@@ -16,7 +16,7 @@ const outputPath = path.resolve(rootDir, getArgValue('--output', defaultOutput))
 const categoryMatchers = [
   { category: 'Mobiles', keywords: ['mobile', 'phone', 'smartphone', 'iphone', 'galaxy', 'redmi', 'realme', 'vivo', 'oppo', 'nothing phone'] },
   { category: 'Electronics', keywords: ['laptop', 'notebook', 'chromebook', 'tablet', 'smartwatch', 'watch', 'headphone', 'earbud', 'speaker', 'camera', 'printer', 'monitor', 'keyboard', 'mouse', 'power bank', 'tv', 'television', 'trimmer'] },
-  { category: 'Fashion', keywords: ['shirt', 'tshirt', 't-shirt', 'jeans', 'saree', 'kurti', 'hoodie', 'jacket', 'shoes', 'sneakers', 'sandals', 'handbag', 'backpack'] },
+  { category: 'Fashion', keywords: ['shirt', 'tshirt', 't-shirt', 'jeans', 'saree', 'kurti', 'hoodie', 'jacket', 'shoes', 'sneakers', 'sandals', 'handbag', 'backpack', 'dress', 'frock', 'top', 'leggings', 'women', 'woman', 'girls', 'boys', 'kids', 'baby clothing'] },
   { category: 'Beauty', keywords: ['skincare', 'makeup', 'perfume', 'face wash', 'lipstick', 'serum', 'moisturizer', 'cleanser'] },
   { category: 'Appliances', keywords: ['refrigerator', 'washing machine', 'air conditioner', 'microwave', 'mixer grinder', 'induction stove', 'blender'] },
   { category: 'Toys', keywords: ['toy', 'teddy', 'doll', 'action figure', 'lego', 'puzzle', 'remote car'] },
@@ -37,6 +37,38 @@ const dedupe = (products) => {
 const toNumber = (value) => {
   const numeric = String(value ?? '').replace(/[^\d.]/g, '');
   return numeric ? Number.parseFloat(numeric) : 0;
+};
+
+const normalizeSizes = (sizes) => {
+  if (!Array.isArray(sizes)) return [];
+
+  const normalized = [];
+  for (const rawSize of sizes) {
+    const value = String(rawSize || '').trim();
+    if (!value) continue;
+
+    const upper = value.toUpperCase();
+    if (['XXXS','XXS','XS','S','M','L','XL','XXL','XXXL','3XL','4XL','5XL'].includes(upper)) {
+      if (!normalized.includes(upper)) normalized.push(upper);
+      continue;
+    }
+
+    if (/^\d{1,2}-\d{1,2}\s*(YEARS|YRS)$/i.test(value) || /^\d{1,2}\s*(YEARS|YRS)$/i.test(value)) {
+      const clean = value.replace(/\s+/g, ' ').replace(/yrs/i, 'Years');
+      if (!normalized.includes(clean)) normalized.push(clean);
+      continue;
+    }
+
+    if (/^\d{2,3}$/.test(value)) {
+      const num = Number(value);
+      if (num >= 18 && num <= 60) {
+        const clean = String(num);
+        if (!normalized.includes(clean)) normalized.push(clean);
+      }
+    }
+  }
+
+  return normalized;
 };
 
 const inferCategory = (product) => {
@@ -73,6 +105,7 @@ const transformProduct = (product, index) => {
   const category = inferCategory(product);
   const images = normalizeImages(product.images, product.main_image);
   const originalPrice = price > 0 ? Math.round(price * 1.12) : 0;
+  const cleanedSizes = normalizeSizes(product.sizes);
 
   return {
     id: `flipkart-${index + 1}`,
@@ -87,11 +120,11 @@ const transformProduct = (product, index) => {
     description: product.description || '',
     image: images[0] || '',
     images,
-    featureImages: [],
+    featureImages: images.slice(1, 5),
     isTrending: rating >= 4,
     isDeal: originalPrice > price,
-    sizes: [],
-    measurements: product.specifications || {},
+    sizes: cleanedSizes,
+    measurements: { ...(product.specifications || {}), ...(cleanedSizes.length ? { 'Size Chart': cleanedSizes.join(', ') } : {}) },
     source: product.link || '',
   };
 };

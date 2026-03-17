@@ -3,7 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { Filter as FilterIcon, ChevronDown } from 'lucide-react';
 import { useProductStore } from '../../store/useProductStore';
 import ProductCard from '../../components/ui/ProductCard';
-import Loader from '../../components/ui/Loader';
+import Seo from '../../components/seo/Seo';
+import { siteName, siteUrl } from '../../utils/siteContent';
 
 const ProductListingPage = () => {
   const [searchParams] = useSearchParams();
@@ -15,12 +16,11 @@ const ProductListingPage = () => {
   } = useProductStore();
   
   const [sortBy, setSortBy] = useState('featured'); // featured, price-low, price-high, newest
+  const categoryParam = searchParams.get('category');
+  const searchParam = searchParams.get('search');
 
   useEffect(() => {
     fetchProducts();
-    
-    const categoryParam = searchParams.get('category');
-    const searchParam = searchParams.get('search');
 
     // Keep store filters in sync with the URL so old searches/categories do not stick around.
     setFilters({
@@ -42,30 +42,53 @@ const ProductListingPage = () => {
     }
   });
 
+  const pageHeading = categoryParam
+    ? `${categoryParam} Products`
+    : searchParam
+      ? `Search results for "${searchParam}"`
+      : 'Shop All Products';
+  const pageDescription = categoryParam
+    ? `Browse ${categoryParam.toLowerCase()} products on ${siteName}, including curated deals, trending picks, and secure online shopping.`
+    : searchParam
+      ? `Find products matching ${searchParam} on ${siteName} across electronics, fashion, beauty, home, and more.`
+      : `${siteName} brings together electronics, fashion, beauty, home essentials, toys, appliances, and daily deals in one online shopping destination.`;
+
   return (
     <div className="min-h-screen bg-background pt-8 pb-20">
+      <Seo
+        title={pageHeading}
+        description={pageDescription}
+        keywords={`NamshyCart products, ${categoryParam || searchParam || 'online shopping'}, electronics, fashion, beauty, home decor, deals`}
+        canonical={`${siteUrl}/products`}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-          <div>
-            <h1 className="text-3xl font-bold text-white mb-2">Shop All Products</h1>
-            <p className="text-gray-400">Showing {sortedProducts.length} results</p>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <div className="relative group">
-              <select 
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="appearance-none pl-4 pr-10 py-2 bg-surface text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer hover:bg-gray-800 transition-colors"
-              >
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="newest">Newest Arrivals</option>
-              </select>
-              <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+        <div className="mb-8 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Discover on {siteName}</p>
+              <h1 className="mt-2 text-3xl font-bold text-white mb-2">{pageHeading}</h1>
+              <p className="max-w-2xl text-sm leading-7 text-gray-400">
+                {pageDescription}
+              </p>
+              <p className="mt-2 text-gray-400">Showing {sortedProducts.length} results</p>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <div className="relative group">
+                <select 
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="appearance-none pl-4 pr-10 py-3 bg-surface text-white border border-gray-700 rounded-xl focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer hover:bg-gray-800 transition-colors"
+                >
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest Arrivals</option>
+                </select>
+                <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+              </div>
             </div>
           </div>
         </div>

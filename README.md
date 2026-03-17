@@ -116,3 +116,29 @@ npm run scrape:flipkart
 ```
 
 Flipkart frequently changes markup and may rate-limit or block scraping, so selectors in this script may need updates over time.
+
+## Deploy To Netlify
+
+This app is ready for Netlify deployment.
+
+Build settings:
+
+```bash
+Build command: npm run build
+Publish directory: dist
+```
+
+SPA routing is configured with both:
+
+```bash
+netlify.toml
+public/_redirects
+```
+
+So deep links like:
+
+```bash
+/products?category=Mobiles
+```
+
+will resolve correctly after deployment.

@@ -1,15 +1,58 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, Search, Menu, X, User, ChevronDown } from 'lucide-react';
+import {
+  ShoppingCart,
+  Search,
+  Menu,
+  X,
+  User,
+  ChevronDown,
+  Package,
+  MapPin,
+  Bell,
+  LogOut,
+} from 'lucide-react';
 import { useCartStore } from '../../store/useCartStore';
 import { useUserStore } from '../../store/useUserStore';
+import { siteName } from '../../utils/siteContent';
+import brandLogo from '../../assets/Namshycart.png';
+
+const categories = [
+  { name: 'Mobiles', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100' },
+  { name: 'Electronics', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100' },
+  { name: 'Fashion', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100' },
+  { name: 'Beauty', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100' },
+  { name: 'Appliances', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100' },
+  { name: 'Toys', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100' },
+  { name: 'Furniture', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100' },
+];
+
+const accountLinks = [
+  { label: 'Account Details', to: '/account?tab=profile', icon: User },
+  { label: 'Order History', to: '/account?tab=orders', icon: Package },
+  { label: 'Saved Address', to: '/account?tab=addresses', icon: MapPin },
+  { label: 'Notifications', to: '/account?tab=notifications', icon: Bell },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
   const cartItemCount = useCartStore((state) => state.getItemCount());
-  const { isAuthenticated, user } = useUserStore();
+  const { isAuthenticated, user, logout } = useUserStore();
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
+  const accountMenuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target)) {
+        setIsAccountMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -20,144 +63,210 @@ const Navbar = () => {
     }
   };
 
-  const categories = [
-    { name: 'Top Offers', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100' },
-    { name: 'Mobiles', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100' },
-    { name: 'Electronics', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100' },
-    { name: 'Fashion', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100' },
-    { name: 'Beauty', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100' },
-    { name: 'Appliances', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100' },
-    { name: 'Toys', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100' },
-    { name: 'Furniture', icon: 'https://rukminim2.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100' },
-  ];
+  const handleLogout = () => {
+    logout();
+    setIsAccountMenuOpen(false);
+    setIsMenuOpen(false);
+    navigate('/');
+  };
 
   return (
     <>
-      {/* Main Top Navbar */}
-      <nav className="bg-surface text-textPrimary sticky top-0 z-50 border-b border-gray-800 shadow-md">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[60px] gap-4">
-            
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center h-full">
-              <Link to="/" className="text-[22px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary italic flex items-center pr-4">
-                FlipShop
-                <span className="text-secondary text-sm font-bold ml-1"><em>Plus</em></span>
+      <nav className="sticky top-0 z-[90] border-b border-white/10 bg-slate-950/82 text-textPrimary shadow-[0_12px_40px_rgba(2,6,23,0.45)] backdrop-blur-2xl">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+          <div className="flex min-h-[72px] items-center justify-between gap-4">
+            <div className="flex min-w-0 items-center gap-4">
+              <Link to="/" className="group flex items-center gap-3">
+                <img
+                  src={brandLogo}
+                  alt={`${siteName} logo`}
+                  className="h-24 w-24 rounded-2xl object-cover shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
+                />
+                <div className="flex flex-col justify-center">
+                  <span className="font-['Space_Grotesk'] text-[24px] font-bold leading-none text-white">
+                    {siteName}
+                  </span>
+                  <span className="mt-1 text-xs uppercase tracking-[0.28em] text-cyan-300">
+                    Smart shopping, styled better
+                  </span>
+                </div>
               </Link>
             </div>
 
-            {/* Desktop Search */}
-            <div className="hidden md:flex flex-1 justify-start ml-4 max-w-[800px]">
-              <form onSubmit={handleSearch} className="w-full relative flex items-center">
-                <div className="absolute left-4 text-gray-400">
-                  <Search size={22} className="stroke-[2px]"/>
+            <div className="hidden max-w-[820px] flex-1 md:flex">
+              <form onSubmit={handleSearch} className="relative flex w-full items-center">
+                <div className="absolute left-4 text-slate-500">
+                  <Search size={20} className="stroke-[2.2px]" />
                 </div>
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for Products, Brands and More"
-                  className="w-full bg-background text-textPrimary rounded-lg py-[10px] pl-12 pr-4 focus:outline-none focus:ring-1 focus:ring-primary transition-colors border border-gray-700 focus:border-primary placeholder-gray-500"
+                  placeholder="Search electronics, fashion, home decor, beauty and more"
+                  className="h-14 w-full rounded-2xl border border-white/10 bg-slate-900/90 pl-12 pr-4 text-[15px] text-white outline-none transition-all placeholder:text-slate-500 focus:border-cyan-300/40 focus:ring-2 focus:ring-cyan-300/10"
+                  aria-label="Search products on NamshyCart"
                 />
               </form>
             </div>
 
-            {/* Desktop Nav Items */}
-            <div className="hidden md:flex items-center space-x-6 text-white">
-              
-              {/* Login / User */}
-              <div className="group relative">
-                {isAuthenticated ? (
-                  <Link to="/account" className="flex items-center space-x-2 hover:bg-gray-800 py-2 px-3 rounded-lg transition-colors">
-                    <User size={20} className="text-gray-300" />
-                    <span className="text-[15px] font-medium">{user?.name?.split(' ')[0]}</span>
-                    <ChevronDown size={16} className="text-gray-400 group-hover:rotate-180 transition-transform"/>
-                  </Link>
-                ) : (
-                  <Link to="/account" className="flex items-center space-x-2 hover:bg-gray-800 py-2 px-4 border border-transparent hover:border-gray-700 rounded-lg transition-colors">
-                    <User size={20} className="text-gray-300" />
-                    <span className="text-[15px] font-medium">Login</span>
-                  </Link>
-                )}
-              </div>
-
-              {/* Cart */}
-              <Link to="/cart" className="flex items-center space-x-2 hover:bg-gray-800 py-2 px-3 rounded-lg transition-colors relative">
-                <div className="relative">
-                  <ShoppingCart size={22} className="text-gray-300 group-hover:text-primary transition-colors" />
-                  {cartItemCount > 0 && (
-                    <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-[10px] text-white font-bold border border-surface">
-                      {cartItemCount}
+            <div className="hidden items-center gap-3 md:flex">
+              {isAuthenticated ? (
+                <div className="relative" ref={accountMenuRef}>
+                  <button
+                    type="button"
+                    onClick={() => setIsAccountMenuOpen((value) => !value)}
+                    className="flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 text-slate-950">
+                      <User size={16} />
                     </span>
+                    <span>Account</span>
+                    <ChevronDown size={15} className="text-slate-500" />
+                  </button>
+
+                  {isAccountMenuOpen && (
+                    <div className="absolute right-0 top-[calc(100%+0.85rem)] z-[120] w-80 overflow-hidden rounded-[1.6rem] border border-slate-700/80 bg-[linear-gradient(180deg,rgba(8,15,30,0.995),rgba(5,10,22,0.995))] p-3 shadow-[0_28px_90px_rgba(0,0,0,0.65)] backdrop-blur-2xl">
+                      <div className="rounded-[1.2rem] border border-white/10 bg-slate-900/95 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                        <div className="text-sm font-semibold text-white">{user?.name}</div>
+                        <div className="mt-1 text-xs text-slate-400">{user?.email}</div>
+                      </div>
+                      <div className="mt-3 space-y-1.5">
+                        {accountLinks.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.to}
+                            onClick={() => setIsAccountMenuOpen(false)}
+                            className="flex items-center gap-3 rounded-[1rem] border border-transparent bg-slate-900/80 px-3.5 py-3.5 text-sm text-slate-100 transition-all hover:border-cyan-300/20 hover:bg-slate-800/95"
+                          >
+                            <item.icon size={16} className="text-cyan-300" />
+                            <span>{item.label}</span>
+                          </Link>
+                        ))}
+                        <button
+                          type="button"
+                          onClick={handleLogout}
+                          className="flex w-full items-center gap-3 rounded-[1rem] border border-red-400/10 bg-red-500/5 px-3.5 py-3.5 text-sm text-red-300 transition-all hover:border-red-400/20 hover:bg-red-500/10"
+                        >
+                          <LogOut size={16} />
+                          <span>Logout</span>
+                        </button>
+                      </div>
+                    </div>
                   )}
                 </div>
-                <span className="text-[15px] font-medium hidden lg:block">Cart</span>
+              ) : (
+                <Link
+                  to="/account"
+                  className="flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                >
+                  <User size={18} className="text-slate-300" />
+                  <span>Login</span>
+                </Link>
+              )}
+
+              <Link
+                to="/cart"
+                className="relative flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+              >
+                <ShoppingCart size={18} className="text-slate-300" />
+                <span>Cart</span>
+                {cartItemCount > 0 && (
+                  <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 px-1 text-[10px] font-bold text-slate-950">
+                    {cartItemCount}
+                  </span>
+                )}
               </Link>
-              
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-4">
-              <Link to="/cart" className="relative p-2 text-gray-300 hover:text-primary transition-colors">
-                <ShoppingCart size={24} />
+            <div className="flex items-center gap-3 md:hidden">
+              <Link to="/cart" className="relative rounded-xl border border-white/8 bg-white/5 p-3 text-slate-200">
+                <ShoppingCart size={20} />
                 {cartItemCount > 0 && (
-                  <span className="absolute top-0 right-0 -mt-1 -mr-1 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-xs text-white font-bold border border-surface">
+                  <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 px-1 text-[10px] font-bold text-slate-950">
                     {cartItemCount}
                   </span>
                 )}
               </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 p-2 hover:text-white"
+                className="rounded-xl border border-white/8 bg-white/5 p-3 text-slate-200"
+                aria-label="Toggle navigation menu"
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="md:hidden bg-surface border-t border-gray-800 shadow-lg absolute w-full left-0 z-50">
-            <div className="px-4 py-3 border-b border-gray-800 bg-gray-900/50">
-               {isAuthenticated ? (
-                 <div className="flex items-center space-x-3 text-white">
-                   <User size={24} className="text-primary" />
-                   <span className="font-medium text-lg">Hi, {user?.name?.split(' ')[0]}</span>
-                 </div>
-               ) : (
-                 <Link to="/account" onClick={() => setIsMenuOpen(false)} className="flex items-center space-x-3 text-white font-medium text-lg">
-                   <User size={24} className="text-primary" />
-                   <span>Login / Register</span>
-                 </Link>
-               )}
-            </div>
-            <div className="px-4 py-4 space-y-4">
+          <div className="border-t border-white/10 bg-slate-950/96 shadow-2xl md:hidden">
+            <div className="space-y-5 px-4 py-5">
               <form onSubmit={handleSearch} className="relative">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full bg-background border border-gray-700 rounded-lg py-2 pl-4 pr-10 text-white focus:outline-none focus:border-primary"
+                  placeholder="Search products, categories and offers"
+                  className="h-12 w-full rounded-xl border border-white/10 bg-slate-900 pl-4 pr-12 text-white outline-none placeholder:text-slate-500 focus:border-cyan-300/40"
                 />
-                <button type="submit" className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary">
-                  <Search size={20} />
+                <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                  <Search size={18} />
                 </button>
               </form>
-              
-              <div className="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-gray-800">
-                {categories.slice(0, 6).map((cat) => (
+
+              {isAuthenticated ? (
+                <div className="rounded-2xl border border-white/8 bg-white/5 p-4">
+                  <div className="mb-3">
+                    <div className="text-sm font-semibold text-white">{user?.name}</div>
+                    <div className="mt-1 text-xs text-slate-400">{user?.email}</div>
+                  </div>
+                  <div className="space-y-2">
+                    {accountLinks.map((item) => (
+                      <Link
+                        key={item.label}
+                        to={item.to}
+                        className="flex items-center gap-3 rounded-xl bg-slate-900/80 px-3 py-3 text-sm text-slate-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <item.icon size={16} className="text-cyan-300" />
+                        <span>{item.label}</span>
+                      </Link>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={handleLogout}
+                      className="flex w-full items-center gap-3 rounded-xl bg-red-500/10 px-3 py-3 text-sm text-red-300"
+                    >
+                      <LogOut size={16} />
+                      <span>Logout</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-white/8 bg-white/5 p-4 text-sm text-slate-300">
+                  <Link to="/account" onClick={() => setIsMenuOpen(false)} className="inline-flex items-center gap-2 font-medium text-white">
+                    <User size={16} />
+                    Login or create your account
+                  </Link>
+                </div>
+              )}
+
+              <div className="rounded-2xl border border-white/8 bg-white/5 p-4 text-sm text-slate-300">
+                Shop curated electronics, fashion, beauty, home essentials, and toys on NamshyCart.
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                {categories.map((cat) => (
                   <Link
                     key={cat.name}
-                    to={cat.name === 'Top Offers' ? '/products' : `/products?category=${encodeURIComponent(cat.name)}`}
-                    className="flex flex-col items-center justify-center p-3 border border-gray-800 rounded-lg bg-background hover:border-primary transition-colors"
+                    to={`/products?category=${encodeURIComponent(cat.name)}`}
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-slate-900/80 px-3 py-3 text-sm text-slate-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <div className="bg-white/90 rounded-md p-1 mb-2">
-                       <img src={cat.icon} alt={cat.name} className="w-8 h-8 object-contain" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/90 p-1">
+                      <img src={cat.icon} alt={cat.name} className="h-8 w-8 object-contain" />
                     </div>
-                    <span className="text-xs font-medium text-gray-300">{cat.name}</span>
+                    <span>{cat.name}</span>
                   </Link>
                 ))}
               </div>
@@ -166,24 +275,20 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Categories Sub-nav (Desktop Only) */}
-      <div className="hidden md:block bg-surface border-b border-gray-800 shadow-sm relative z-40">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-end justify-between px-2">
-            {categories.map((cat, idx) => (
-              <Link 
-                key={idx} 
-                to={cat.name === 'Top Offers' ? '/products' : `/products?category=${encodeURIComponent(cat.name)}`}
-                className="flex flex-col items-center group cursor-pointer px-1 w-[80px]"
+      <div className="hidden border-b border-white/8 bg-slate-950/72 backdrop-blur-xl md:block">
+        <div className="mx-auto max-w-[1440px] px-4 py-3 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-4 gap-3 lg:grid-cols-7">
+            {categories.map((cat) => (
+              <Link
+                key={cat.name}
+                to={`/products?category=${encodeURIComponent(cat.name)}`}
+                className="group flex min-h-[118px] flex-col items-center justify-center rounded-2xl border border-white/8 bg-white/[0.04] px-2 text-center transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.07]"
               >
-                <div className="w-[64px] h-[64px] mb-2 relative flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
-                   <img src={cat.icon} alt={cat.name} className="w-full h-full object-contain" />
+                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/95 p-2 shadow-[0_10px_24px_rgba(255,255,255,0.08)]">
+                  <img src={cat.icon} alt={cat.name} className="h-full w-full object-contain" />
                 </div>
-                <span className="text-[14px] font-medium text-gray-300 whitespace-nowrap group-hover:text-primary transition-colors flex items-center">
+                <span className="text-sm font-medium text-slate-200 transition-colors group-hover:text-white">
                   {cat.name}
-                  {['Fashion', 'Electronics', 'Beauty'].includes(cat.name) && (
-                    <ChevronDown size={14} className="ml-1 text-gray-500 group-hover:text-primary group-hover:rotate-180 transition-transform"/>
-                  )}
                 </span>
               </Link>
             ))}

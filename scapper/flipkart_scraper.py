@@ -60,6 +60,15 @@ def normalize_image_url(url):
     return url
 
 
+def canonicalize_image_url(url):
+    normalized = normalize_image_url(url).strip()
+    if not normalized:
+        return ""
+    normalized = re.sub(r"([?&])q=\d+", r"\1", normalized)
+    normalized = re.sub(r"[?&]+$", "", normalized)
+    return normalized
+
+
 def parse_price_from_text(text):
     match = re.search(r"₹\s?([\d,]+)", text or "")
     return match.group(1).replace(",", "") if match else "0"
@@ -137,18 +146,62 @@ def extract_specifications(product_soup):
     return specs
 
 
-def extract_images(product_soup, fallback_image):
-    images = []
+def extract_sizes(product_soup):
+    size_text_candidates = []
 
-    for image in product_soup.select("img"):
-        candidate = image.get("src") or image.get("data-src")
-        if (
-            candidate
-            and candidate.startswith("http")
-            and ".svg" not in candidate.lower()
-            and ("rukmini" in candidate.lower() or "rukminim" in candidate.lower() or "rukminim1" in candidate.lower())
-        ):
-            images.append(candidate)
+    for node in product_soup.select('div, span, button, li'):
+        text = get_text(node)
+        if 'Size Chart' in text or text.startswith('Select Size'):
+            size_text_candidates.append(text)
+
+    combined_text = ' '.join(size_text_candidates)
+    patterns = [
+        r'\b(?:XXXS|XXS|XS|S|M|L|XL|XXL|XXXL|3XL|4XL|5XL)\b',
+        r'\b\d{2,3}\b',
+        r'\b\d{1,2}-\d{1,2}\s*(?:Years|Yrs)\b',
+        r'\b\d{1,2}\s*(?:Years|Yrs)\b',
+    ]
+
+    sizes = []
+    for pattern in patterns:
+        for match in re.findall(pattern, combined_text, flags=re.IGNORECASE):
+            normalized = re.sub(r'\s+', ' ', match).strip()
+            if normalized and normalized not in sizes:
+                sizes.append(normalized)
+
+    return sizes[:12]
+
+
+def extract_images(product_soup, raw_html, fallback_image):
+    images = []
+    attrs_to_check = ["src", "data-src", "data-lazy", "data-srcset", "srcset", "href", "data-image-url"]
+
+    for node in product_soup.select("img, source, a, div"):
+        for attr_name in attrs_to_check:
+            raw_value = node.get(attr_name)
+            if not raw_value:
+                continue
+
+            candidates = re.findall(r"https?://[^\"'\s,]+", raw_value)
+            if not candidates and raw_value.startswith(("http://", "https://", "//")):
+                candidates = [raw_value]
+
+            for candidate in candidates:
+                lowered = candidate.lower()
+                if (
+                    ".svg" in lowered
+                    or "static-assets-web.flixcart.com" in lowered
+                    or ("rukmini" not in lowered and "rukminim" not in lowered)
+                ):
+                    continue
+                images.append(normalize_image_url(candidate))
+
+    html_candidates = re.findall(
+        r"https?://[^\"'\\]+(?:rukminim|rukmini)[^\"'\\]+?\.(?:jpg|jpeg|png|webp)(?:\?[^\"'\\]*)?",
+        raw_html or "",
+        flags=re.IGNORECASE,
+    )
+    images.extend(normalize_image_url(candidate) for candidate in html_candidates)
 
     fallback_image = normalize_image_url(fallback_image)
     if fallback_image:
@@ -157,12 +210,13 @@ def extract_images(product_soup, fallback_image):
     unique_images = []
     seen = set()
     for image in images:
-        if image in seen:
+        canonical = canonicalize_image_url(image)
+        if not canonical or canonical in seen:
             continue
-        seen.add(image)
+        seen.add(canonical)
         unique_images.append(image)
 
-    return unique_images[:8]
+    return unique_images[:12]
 
 
 def extract_structured_product_data(product_soup):
@@ -195,7 +249,7 @@ def extract_structured_product_data(product_soup):
     return product_data
 
 
-def build_raw_product(search_card, product_soup, product_url, fallback_title, fallback_price, fallback_rating, fallback_image):
+def build_raw_product(search_card, product_soup, raw_html, product_url, fallback_title, fallback_price, fallback_rating, fallback_image):
     structured = extract_structured_product_data(product_soup)
     offers = structured.get("offers", {}) if isinstance(structured.get("offers"), dict) else {}
     aggregate_rating = structured.get("aggregateRating", {}) if isinstance(structured.get("aggregateRating"), dict) else {}
@@ -230,7 +284,8 @@ def build_raw_product(search_card, product_soup, product_url, fallback_title, fa
     ) or structured.get("description") or "No description"
 
     specs = extract_specifications(product_soup)
-    images = extract_images(product_soup, fallback_image)
+    sizes = extract_sizes(product_soup)
+    images = extract_images(product_soup, raw_html, fallback_image)
     if structured.get("image"):
         structured_images = structured["image"] if isinstance(structured["image"], list) else [structured["image"]]
         images = dedupe([{"link": image, "title": image} for image in [*structured_images, *images]])
@@ -244,6 +299,8 @@ def build_raw_product(search_card, product_soup, product_url, fallback_title, fa
         specs.setdefault("Rating Count", str(aggregate_rating["ratingCount"]))
     if aggregate_rating.get("reviewCount"):
         specs.setdefault("Review Count", str(aggregate_rating["reviewCount"]))
+    if sizes:
+        specs.setdefault("Size Chart", ', '.join(sizes))
 
     return {
         "title": title or "Untitled product",
@@ -251,6 +308,7 @@ def build_raw_product(search_card, product_soup, product_url, fallback_title, fa
         "rating": rating_text or "No rating",
         "main_image": images[0] if images else fallback_image,
         "images": images,
+        "sizes": sizes,
         "description": description,
         "specifications": specs,
         "link": product_url,
@@ -265,6 +323,7 @@ def build_search_only_product(candidate):
         "rating": candidate.get("fallback_rating") or "No rating",
         "main_image": normalize_image_url(candidate.get("fallback_image") or ""),
         "images": [normalize_image_url(candidate.get("fallback_image"))] if candidate.get("fallback_image") else [],
+        "sizes": [],
         "description": "",
         "specifications": {},
         "link": candidate.get("product_url") or "",
@@ -292,7 +351,7 @@ def normalize_for_app(raw_product, index):
         "featureImages": [],
         "isTrending": parse_rating(str(rating_value)) >= 4.2,
         "isDeal": original_price > current_price > 0,
-        "sizes": [],
+        "sizes": raw_product.get("sizes") or [],
         "measurements": raw_product.get("specifications") or {},
         "source": raw_product.get("link") or "",
     }
@@ -375,6 +434,7 @@ def scrape_query(query, max_pages, max_products, delay_seconds, timeout, search_
                     raw_product = build_raw_product(
                         candidate["card"],
                         product_soup,
+                        product_response.text,
                         candidate["product_url"],
                         candidate["fallback_title"],
                         candidate["fallback_price"],
@@ -455,6 +515,7 @@ def scrape_query_with_playwright(query, max_pages, max_products, delay_seconds, 
                             raw_product = build_raw_product(
                                 candidate["card"],
                                 product_soup,
+                                detail_html,
                                 candidate["product_url"],
                                 candidate["fallback_title"],
                                 candidate["fallback_price"],

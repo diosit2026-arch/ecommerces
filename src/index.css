@@ -1,28 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-textPrimary leading-relaxed tracking-wide;
     margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
+    background:
+      radial-gradient(circle at top, rgba(56, 189, 248, 0.1), transparent 28%),
+      linear-gradient(180deg, #050816 0%, #081120 45%, #050816 100%);
+    min-width: 320px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .immersive-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(15, 23, 42, 0.22));
+    box-shadow: 0 26px 80px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(22px);
+    transform-style: preserve-3d;
+    transition:
+      transform 350ms ease,
+      border-color 350ms ease,
+      box-shadow 350ms ease;
+  }
+
+  .immersive-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(125, 211, 252, 0.22), transparent 34%, transparent 65%, rgba(244, 114, 182, 0.14));
+    opacity: 0;
+    transition: opacity 350ms ease;
+    pointer-events: none;
+  }
+
+  .immersive-card:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(-5deg);
+    border-color: rgba(125, 211, 252, 0.3);
+    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.42);
+  }
+
+  .immersive-card:hover::before {
+    opacity: 1;
+  }
+
+  .category-panel {
+    position: relative;
+    transform-style: preserve-3d;
+    transition:
+      transform 450ms ease,
+      box-shadow 450ms ease,
+      border-color 450ms ease;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.28);
+  }
+
+  .category-panel:hover {
+    transform: perspective(1400px) rotateX(4deg) rotateY(-4deg) translateY(-10px);
+    border-color: rgba(125, 211, 252, 0.26);
+    box-shadow: 0 38px 120px rgba(0, 0, 0, 0.38);
   }
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a; 
+  background: #07111f;
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #334155; 
-  border-radius: 4px;
+  background: linear-gradient(180deg, #38bdf8, #a855f7);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5cf6; 
+  background: linear-gradient(180deg, #67e8f9, #ec4899);
 }

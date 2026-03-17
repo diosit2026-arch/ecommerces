@@ -1,59 +1,180 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { CreditCard, CheckCircle, Lock, ArrowRight } from 'lucide-react';
+import { CreditCard, CheckCircle, Lock, ArrowRight, Banknote } from 'lucide-react';
 import { useCartStore } from '../../store/useCartStore';
 import { useUserStore } from '../../store/useUserStore';
+import Seo from '../../components/seo/Seo';
+import { siteUrl } from '../../utils/siteContent';
 
 const MotionDiv = motion.div;
 const FREE_SHIPPING_THRESHOLD = 4000;
 const SHIPPING_CHARGE = 199;
 const formatInr = (value) => `Rs ${Number(value || 0).toLocaleString('en-IN')}`;
-
-const InputGroup = ({ label, type = 'text', required = false, placeholder = '' }) => (
-  <div className="mb-4">
-    <label className="block text-sm font-medium text-gray-300 mb-2">{label}</label>
-    <input
-      type={type}
-      required={required}
-      placeholder={placeholder}
-      className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
-    />
-  </div>
-);
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phonePattern = /^[6-9]\d{9}$/;
+const pinCodePattern = /^\d{6}$/;
+const cardNumberPattern = /^\d{16}$/;
+const expiryPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+const cvcPattern = /^\d{3,4}$/;
 
 const CheckoutPage = () => {
   const { items, getCartTotal, clearCart } = useCartStore();
-  const { isAuthenticated } = useUserStore();
+  const { isAuthenticated, user, placeOrder } = useUserStore();
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [hasSubmittedOrder, setHasSubmittedOrder] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('card');
+  const [shippingErrors, setShippingErrors] = useState({});
+  const [paymentErrors, setPaymentErrors] = useState({});
+  const [checkoutForm, setCheckoutForm] = useState({
+    firstName: user?.name?.split(' ')[0] || '',
+    lastName: user?.name?.split(' ').slice(1).join(' ') || '',
+    email: user?.email || '',
+    phone: user?.phone || '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    state: 'Telangana',
+    postalCode: '',
+    country: 'India',
+    paymentName: user?.name || '',
+    cardNumber: '',
+    expiryDate: '',
+    cvc: '',
+  });
 
   const subtotal = getCartTotal();
   const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_CHARGE;
   const total = subtotal + shipping;
 
+  useEffect(() => {
+    if (items.length === 0 && step !== 3 && !hasSubmittedOrder) {
+      navigate('/cart');
+    }
+  }, [hasSubmittedOrder, items.length, navigate, step]);
+
+  const updateField = (field, value) => {
+    setCheckoutForm((state) => ({ ...state, [field]: value }));
+    setShippingErrors((state) => ({ ...state, [field]: '' }));
+    setPaymentErrors((state) => ({ ...state, [field]: '' }));
+  };
+
+  const validateShippingForm = () => {
+    const errors = {};
+
+    if (!checkoutForm.firstName.trim()) errors.firstName = 'First name is required.';
+    if (!checkoutForm.lastName.trim()) errors.lastName = 'Last name is required.';
+    if (!emailPattern.test(checkoutForm.email.trim())) errors.email = 'Enter a valid email address.';
+    if (!phonePattern.test(checkoutForm.phone.trim())) errors.phone = 'Enter a valid 10-digit mobile number.';
+    if (!checkoutForm.addressLine1.trim()) errors.addressLine1 = 'Street address is required.';
+    if (!checkoutForm.city.trim()) errors.city = 'City is required.';
+    if (!checkoutForm.state.trim()) errors.state = 'State is required.';
+    if (!pinCodePattern.test(checkoutForm.postalCode.trim())) errors.postalCode = 'Enter a valid 6-digit PIN code.';
+    if (!checkoutForm.country.trim()) errors.country = 'Country is required.';
+
+    return errors;
+  };
+
+  const validatePaymentForm = () => {
+    const errors = {};
+
+    if (paymentMethod === 'card') {
+      if (!checkoutForm.paymentName.trim()) errors.paymentName = 'Name on card is required.';
+      if (!cardNumberPattern.test(checkoutForm.cardNumber.replace(/\s+/g, ''))) {
+        errors.cardNumber = 'Enter a valid 16-digit card number.';
+      }
+      if (!expiryPattern.test(checkoutForm.expiryDate.trim())) {
+        errors.expiryDate = 'Use MM/YY format.';
+      }
+      if (!cvcPattern.test(checkoutForm.cvc.trim())) {
+        errors.cvc = 'Enter a valid CVC.';
+      }
+    }
+
+    return errors;
+  };
+
   const handleInfoSubmit = (e) => {
     e.preventDefault();
+    const errors = validateShippingForm();
+    setShippingErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
     setStep(2);
+    window.scrollTo(0, 0);
+  };
+
+  const submitPayment = () => {
+    const errors = validatePaymentForm();
+    setPaymentErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
+
+    const shippingAddress = {
+      title: 'Delivery Address',
+      fullName: `${checkoutForm.firstName} ${checkoutForm.lastName}`.trim(),
+      phone: checkoutForm.phone,
+      line1: checkoutForm.addressLine1,
+      line2: checkoutForm.addressLine2,
+      city: checkoutForm.city,
+      state: checkoutForm.state,
+      postalCode: checkoutForm.postalCode,
+      country: checkoutForm.country,
+    };
+
+    const orderResult = isAuthenticated
+      ? placeOrder({
+          items,
+          totals: { subtotal, shipping, total },
+          shippingAddress,
+        })
+      : { success: false, order: null };
+
+    const nextOrderConfirmation = orderResult.order
+      ? { ...orderResult.order, paymentMethod }
+      : {
+          id: `#ORD-${Date.now().toString().slice(-6)}`,
+          address: shippingAddress,
+          paymentMethod,
+        };
+
+    setHasSubmittedOrder(true);
+    clearCart();
+    navigate('/order-confirmed', {
+      state: {
+        orderConfirmation: nextOrderConfirmation,
+      },
+    });
     window.scrollTo(0, 0);
   };
 
   const handlePaymentSubmit = (e) => {
     e.preventDefault();
-    setStep(3);
-    clearCart();
-    window.scrollTo(0, 0);
+    submitPayment();
   };
 
-  if (items.length === 0 && step !== 3) {
-    navigate('/cart');
+  if (items.length === 0 && step !== 3 && !hasSubmittedOrder) {
     return null;
   }
 
   return (
     <div className="min-h-screen bg-background pt-10 pb-20">
+      <Seo
+        title="Secure Checkout"
+        description="Complete your order on NamshyCart with secure checkout, shipping details, payment confirmation, and a simple purchase flow."
+        keywords="NamshyCart checkout, secure payment, shipping details, online order"
+        canonical={`${siteUrl}/checkout`}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 border-b border-gray-800 pb-8">
+          <div className="mb-6 text-center">
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Secure order flow</p>
+            <h1 className="mt-3 text-3xl font-bold text-white">Checkout with confidence on NamshyCart</h1>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-gray-400">Fast checkout steps, protected payment messaging, and clear order totals help create a better customer experience.</p>
+          </div>
           <div className="flex items-center justify-center gap-4 sm:gap-12">
             <div className={`flex items-center ${step >= 1 ? 'text-primary' : 'text-gray-500'}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3 ${step >= 1 ? 'bg-primary text-white' : 'bg-surface text-gray-500'}`}>1</div>
@@ -89,7 +210,7 @@ const CheckoutPage = () => {
                     <div className="mb-8 p-4 border border-gray-700 rounded-xl bg-gray-800 flex justify-between items-center">
                       <div>
                         <p className="text-white font-medium mb-1">Already have an account?</p>
-                        <p className="text-sm text-gray-400">Log in for a faster checkout process.</p>
+                        <p className="text-sm text-gray-400">Log in for saved order history and addresses.</p>
                       </div>
                       <button onClick={() => navigate('/account')} className="px-4 py-2 bg-background border border-gray-600 rounded-lg text-white font-medium hover:bg-gray-700 transition-colors">
                         Log in
@@ -97,39 +218,73 @@ const CheckoutPage = () => {
                     </div>
                   )}
 
-                  <form onSubmit={handleInfoSubmit}>
+                  <form onSubmit={handleInfoSubmit} noValidate>
                     <div className="mb-8">
                       <h3 className="text-lg font-bold text-white mb-4">Contact info</h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <InputGroup label="First name" required />
-                        <InputGroup label="Last name" required />
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-300 mb-2">First name</label>
+                          <input value={checkoutForm.firstName} onChange={(e) => updateField('firstName', e.target.value)} required className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                          {shippingErrors.firstName && <p className="mt-2 text-xs text-red-400">{shippingErrors.firstName}</p>}
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-300 mb-2">Last name</label>
+                          <input value={checkoutForm.lastName} onChange={(e) => updateField('lastName', e.target.value)} required className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                          {shippingErrors.lastName && <p className="mt-2 text-xs text-red-400">{shippingErrors.lastName}</p>}
+                        </div>
                       </div>
-                      <InputGroup label="Email address" type="email" required />
-                      <InputGroup label="Phone number (optional)" type="tel" />
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Email address</label>
+                        <input type="email" value={checkoutForm.email} onChange={(e) => updateField('email', e.target.value)} required className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                        {shippingErrors.email && <p className="mt-2 text-xs text-red-400">{shippingErrors.email}</p>}
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Phone number</label>
+                        <input type="tel" value={checkoutForm.phone} onChange={(e) => updateField('phone', e.target.value)} className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                        {shippingErrors.phone && <p className="mt-2 text-xs text-red-400">{shippingErrors.phone}</p>}
+                      </div>
                     </div>
 
                     <div>
                       <h3 className="text-lg font-bold text-white mb-4">Shipping address</h3>
-                      <InputGroup label="Street address" required />
-                      <InputGroup label="Apartment, suite, etc. (optional)" />
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Street address</label>
+                        <input value={checkoutForm.addressLine1} onChange={(e) => updateField('addressLine1', e.target.value)} required className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                        {shippingErrors.addressLine1 && <p className="mt-2 text-xs text-red-400">{shippingErrors.addressLine1}</p>}
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Apartment, suite, etc. (optional)</label>
+                        <input value={checkoutForm.addressLine2} onChange={(e) => updateField('addressLine2', e.target.value)} className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                      </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <InputGroup label="City" required />
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-300 mb-2">City</label>
+                          <input value={checkoutForm.city} onChange={(e) => updateField('city', e.target.value)} required className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                          {shippingErrors.city && <p className="mt-2 text-xs text-red-400">{shippingErrors.city}</p>}
+                        </div>
                         <div className="mb-4">
                           <label className="block text-sm font-medium text-gray-300 mb-2">State / Province</label>
-                          <select className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary">
-                            <option>Maharashtra</option>
+                          <select value={checkoutForm.state} onChange={(e) => updateField('state', e.target.value)} className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary">
                             <option>Telangana</option>
+                            <option>Maharashtra</option>
                             <option>Karnataka</option>
+                            <option>Tamil Nadu</option>
                           </select>
+                          {shippingErrors.state && <p className="mt-2 text-xs text-red-400">{shippingErrors.state}</p>}
                         </div>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <InputGroup label="PIN code" required />
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-300 mb-2">PIN code</label>
+                          <input value={checkoutForm.postalCode} onChange={(e) => updateField('postalCode', e.target.value)} required className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                          {shippingErrors.postalCode && <p className="mt-2 text-xs text-red-400">{shippingErrors.postalCode}</p>}
+                        </div>
                         <div className="mb-4">
                           <label className="block text-sm font-medium text-gray-300 mb-2">Country</label>
-                          <select className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary">
+                          <select value={checkoutForm.country} onChange={(e) => updateField('country', e.target.value)} className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary">
                             <option>India</option>
                           </select>
+                          {shippingErrors.country && <p className="mt-2 text-xs text-red-400">{shippingErrors.country}</p>}
                         </div>
                       </div>
                     </div>
@@ -203,88 +358,91 @@ const CheckoutPage = () => {
                   <button onClick={() => setStep(1)} className="text-sm text-gray-400 hover:text-white underline">Edit Shipping step</button>
                 </div>
 
-                <form onSubmit={handlePaymentSubmit}>
+                <form onSubmit={handlePaymentSubmit} noValidate>
                   <div className="mb-8 space-y-4">
-                    <label className="relative flex cursor-pointer rounded-xl border border-primary bg-gray-800/50 p-4 focus:outline-none">
-                      <input type="radio" name="payment_method" value="card" checked className="hidden" readOnly />
+                    <label className={`relative flex cursor-pointer rounded-xl border p-4 focus:outline-none ${paymentMethod === 'card' ? 'border-primary bg-gray-800/50' : 'border-gray-700 bg-background/60'}`}>
+                      <input type="radio" name="payment_method" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} className="hidden" />
                       <span className="flex flex-1 items-center">
                         <span className="flex flex-col">
                           <span className="block text-sm font-bold text-white flex items-center">
                             <CreditCard className="mr-2 text-primary" size={20} /> Credit or Debit Card
                           </span>
+                          <span className="mt-1 text-xs text-gray-400">Pay online with a card and complete instantly.</span>
                         </span>
                       </span>
-                      <CheckCircle className="h-5 w-5 text-primary" />
+                      {paymentMethod === 'card' && <CheckCircle className="h-5 w-5 text-primary" />}
+                    </label>
+                    <label className={`relative flex cursor-pointer rounded-xl border p-4 focus:outline-none ${paymentMethod === 'cod' ? 'border-primary bg-gray-800/50' : 'border-gray-700 bg-background/60'}`}>
+                      <input type="radio" name="payment_method" value="cod" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} className="hidden" />
+                      <span className="flex flex-1 items-center">
+                        <span className="flex flex-col">
+                          <span className="block text-sm font-bold text-white flex items-center">
+                            <Banknote className="mr-2 text-primary" size={20} /> Cash on Delivery
+                          </span>
+                          <span className="mt-1 text-xs text-gray-400">Pay when your order reaches your address.</span>
+                        </span>
+                      </span>
+                      {paymentMethod === 'cod' && <CheckCircle className="h-5 w-5 text-primary" />}
                     </label>
                   </div>
 
-                  <div className="mb-8 p-6 border border-gray-700 rounded-xl bg-background">
-                    <InputGroup label="Card number" placeholder="0000 0000 0000 0000" required />
-                    <div className="grid grid-cols-2 gap-4">
-                      <InputGroup label="Expiration date (MM/YY)" required />
-                      <InputGroup label="Security code (CVC)" required />
+                  {paymentMethod === 'card' ? (
+                    <div className="mb-8 p-6 border border-gray-700 rounded-xl bg-background">
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Card number</label>
+                        <input value={checkoutForm.cardNumber} onChange={(e) => updateField('cardNumber', e.target.value)} placeholder="0000 0000 0000 0000" className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                        {paymentErrors.cardNumber && <p className="mt-2 text-xs text-red-400">{paymentErrors.cardNumber}</p>}
+                      </div>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-300 mb-2">Expiration date (MM/YY)</label>
+                          <input value={checkoutForm.expiryDate} onChange={(e) => updateField('expiryDate', e.target.value)} placeholder="08/28" className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                          {paymentErrors.expiryDate && <p className="mt-2 text-xs text-red-400">{paymentErrors.expiryDate}</p>}
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-300 mb-2">Security code (CVC)</label>
+                          <input value={checkoutForm.cvc} onChange={(e) => updateField('cvc', e.target.value)} placeholder="123" className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                          {paymentErrors.cvc && <p className="mt-2 text-xs text-red-400">{paymentErrors.cvc}</p>}
+                        </div>
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Name on card</label>
+                        <input value={checkoutForm.paymentName} onChange={(e) => updateField('paymentName', e.target.value)} className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
+                        {paymentErrors.paymentName && <p className="mt-2 text-xs text-red-400">{paymentErrors.paymentName}</p>}
+                      </div>
                     </div>
-                    <InputGroup label="Name on card" required />
-                  </div>
+                  ) : (
+                    <div className="mb-8 rounded-xl border border-gray-700 bg-background p-6">
+                      <div className="flex items-start space-x-4">
+                        <Banknote className="mt-1 text-primary" size={24} />
+                        <div>
+                          <h4 className="text-white font-bold mb-1">Cash on Delivery selected</h4>
+                          <p className="text-sm text-gray-400">You can place the order now and pay in cash when the delivery arrives.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="bg-gray-800 rounded-xl p-6 mb-8 flex items-start space-x-4">
                     <Lock className="text-green-500 flex-shrink-0" size={24} />
                     <div>
-                      <h4 className="text-white font-bold mb-1">Secure payment processing</h4>
-                      <p className="text-sm text-gray-400">All transactions are encrypted and secured. We never store your full card details.</p>
+                      <h4 className="text-white font-bold mb-1">{paymentMethod === 'cod' ? 'Cash on delivery confirmation' : 'Secure payment processing'}</h4>
+                      <p className="text-sm text-gray-400">{paymentMethod === 'cod' ? 'Your order will be confirmed now and payment will be collected at delivery.' : 'All transactions are encrypted and secured. We never store your full card details.'}</p>
                     </div>
                   </div>
 
                   <button
-                    type="submit"
+                    type={paymentMethod === 'cod' ? 'button' : 'submit'}
+                    onClick={paymentMethod === 'cod' ? submitPayment : undefined}
                     className="w-full py-4 bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-opacity"
                   >
-                    Pay {formatInr(total)} Now
+                    {paymentMethod === 'cod' ? `Place COD Order for ${formatInr(total)}` : `Pay ${formatInr(total)} Now`}
                   </button>
                 </form>
               </div>
             </MotionDiv>
           )}
 
-          {step === 3 && (
-            <MotionDiv
-              key="step3"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="max-w-xl mx-auto text-center"
-            >
-              <div className="bg-surface rounded-3xl border border-gray-800 p-12 shadow-2xl">
-                <div className="w-24 h-24 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-8 relative">
-                  <MotionDiv
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
-                  >
-                    <CheckCircle size={50} className="text-accent" />
-                  </MotionDiv>
-                </div>
-
-                <h2 className="text-4xl font-extrabold text-white mb-4">Payment Successful!</h2>
-                <p className="text-lg text-gray-400 mb-8 max-w-sm mx-auto">
-                  Thank you for your purchase. We've sent an order confirmation email to you.
-                </p>
-
-                <div className="bg-background rounded-xl p-6 mb-10 text-left border border-gray-800">
-                  <p className="text-sm text-gray-400 mb-1">Order number</p>
-                  <p className="text-white font-mono font-bold text-lg mb-4">#ORD-927361-FL</p>
-                  <p className="text-sm text-gray-400 mb-1">Estimated delivery</p>
-                  <p className="text-white font-medium">Thursday, March 19, 2026</p>
-                </div>
-
-                <button
-                  onClick={() => navigate('/products')}
-                  className="px-8 py-4 bg-primary hover:bg-indigo-600 text-white rounded-full font-bold transition-colors inline-block"
-                >
-                  Continue Shopping
-                </button>
-              </div>
-            </MotionDiv>
-          )}
         </AnimatePresence>
       </div>
     </div>

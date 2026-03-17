@@ -16,6 +16,8 @@ import {
 import { useProductStore } from '../../store/useProductStore';
 import { useCartStore } from '../../store/useCartStore';
 import ProductCard from '../../components/ui/ProductCard';
+import Seo from '../../components/seo/Seo';
+import { siteUrl } from '../../utils/siteContent';
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
@@ -55,9 +57,13 @@ const ProductDetailsPage = () => {
   }
 
   const gallery = product.images && product.images.length > 0
-    ? product.images.slice(0, 4)
+    ? product.images.slice(0, product.category === 'Mobiles' ? 6 : 4)
     : (product.image ? [product.image] : []);
   const displayedImage = gallery.includes(activeImage) ? activeImage : (product.image || '');
+  const immersiveTitle = product.category === 'Mobiles' ? '360 Mobile Preview' : '3D Product Preview';
+  const immersiveHint = product.category === 'Mobiles'
+    ? 'Move mouse to simulate a 360-degree product spin'
+    : 'Move mouse to tilt';
 
   const discountPercentage = product.originalPrice && product.originalPrice > product.price
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -111,6 +117,32 @@ const ProductDetailsPage = () => {
 
   return (
     <div className="min-h-screen bg-background pt-8 pb-20">
+      <Seo
+        title={product ? `${product.name} by ${product.brand}` : 'Product Details'}
+        description={product ? `${product.name} on NamshyCart. Shop ${product.category?.toLowerCase()} products with pricing, ratings, gallery images, secure checkout, and fast delivery.` : 'Explore product details on NamshyCart.'}
+        keywords={product ? `${product.name}, ${product.brand}, ${product.category}, NamshyCart, online shopping, product details` : 'NamshyCart product details'}
+        canonical={`${siteUrl}/products/${id}`}
+        jsonLd={product ? {
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: product.name,
+          brand: product.brand,
+          description: product.description,
+          image: gallery,
+          category: product.category,
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'INR',
+            price: product.price,
+            availability: 'https://schema.org/InStock',
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: product.rating,
+            reviewCount: product.reviewsCount,
+          },
+        } : null}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
@@ -172,7 +204,7 @@ const ProductDetailsPage = () => {
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.35em] text-cyan-300">Immersive View</p>
-                  <h3 className="mt-2 text-xl font-bold text-white">3D Product Preview</h3>
+                  <h3 className="mt-2 text-xl font-bold text-white">{immersiveTitle}</h3>
                 </div>
                 <div className="rounded-full border border-cyan-400/30 bg-cyan-400/10 p-3 text-cyan-200">
                   <Box size={20} />
@@ -205,7 +237,7 @@ const ProductDetailsPage = () => {
                   )}
                 </div>
                 <div className="absolute left-4 top-4 rounded-full border border-cyan-400/30 bg-slate-900/70 px-3 py-1 text-xs font-medium text-cyan-100 backdrop-blur">
-                  Move mouse to tilt
+                  {immersiveHint}
                 </div>
                 <div className="absolute right-4 top-4 rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-xs font-medium text-gray-200 backdrop-blur">
                   {gallery.length} angles
@@ -280,6 +312,9 @@ const ProductDetailsPage = () => {
               <h2 className="mb-3 text-xl font-bold text-white">Product Description</h2>
               <p className="text-gray-300 text-lg leading-relaxed">
                 {product.description}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-gray-400">
+                Shop {product.name} from {product.brand} on NamshyCart for a cleaner buying experience, secure checkout, trusted delivery messaging, and easy access to related {product.category?.toLowerCase()} products.
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {specItems.map((item) => (
@@ -364,9 +399,7 @@ const ProductDetailsPage = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-400 border-t border-gray-800 pt-8">
-              <div className="flex items-center"><Truck className="mr-3 text-primary" size={20} /> Free USA Shipping</div>
               <div className="flex items-center"><RefreshCw className="mr-3 text-primary" size={20} /> 30-Day Returns</div>
-              <div className="flex items-center"><ShieldCheck className="mr-3 text-primary" size={20} /> 2-Year Warranty</div>
               <div className="flex items-center"><CreditCard className="mr-3 text-primary" size={20} /> Secure Checkout</div>
             </div>
           </div>

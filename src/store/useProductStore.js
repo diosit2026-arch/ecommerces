@@ -2,7 +2,11 @@ import { create } from 'zustand';
 import electronicsProductsSource from '../data/electronics_products.json';
 import fashionProductsSource from '../data/fashion_products.json';
 import flipkartProductsSource from '../data/flipkart_products.json';
-import { withRealProductImages } from '../utils/productImageCatalog';
+import {
+  hasValidProductPrice,
+  removeDuplicateProducts,
+  withEnhancedProductImages,
+} from '../utils/productImageCatalog';
 
 const USD_TO_INR_RATE = 83;
 
@@ -14,6 +18,29 @@ const toInrAmount = (value) => {
   return Math.round(numericValue * USD_TO_INR_RATE);
 };
 
+const getReasonableOriginalPrice = (priceValue, originalValue) => {
+  const price = toInrAmount(priceValue);
+  const candidateOriginal = toInrAmount(originalValue || 0);
+
+  if (!price) {
+    return 0;
+  }
+
+  const fallbackMultiplier =
+    price >= 50000 ? 1.08 : price >= 20000 ? 1.12 : price >= 10000 ? 1.15 : price >= 3000 ? 1.18 : 1.22;
+  const capMultiplier =
+    price >= 50000 ? 1.14 : price >= 20000 ? 1.18 : price >= 10000 ? 1.22 : price >= 3000 ? 1.26 : 1.32;
+
+  const fallbackOriginal = Math.round(price * fallbackMultiplier);
+  const maxReasonableOriginal = Math.round(price * capMultiplier);
+
+  if (candidateOriginal <= price) {
+    return fallbackOriginal;
+  }
+
+  return Math.min(candidateOriginal, maxReasonableOriginal);
+};
+
 const normalizeProduct = (product, index, category, baseId) => ({
   ...product,
   id: baseId + index + 1,
@@ -21,7 +48,7 @@ const normalizeProduct = (product, index, category, baseId) => ({
   price: toInrAmount(product.price),
   image: product.image || product.images?.[0] || '',
   images: Array.isArray(product.images) ? product.images : [],
-  originalPrice: toInrAmount(product.originalPrice || product.price),
+  originalPrice: getReasonableOriginalPrice(product.price, product.originalPrice),
   reviewsCount: product.reviewsCount || product.stock || 0,
   isTrending: product.isTrending ?? false,
   isDeal: product.isDeal ?? false,
@@ -31,15 +58,19 @@ const normalizeProduct = (product, index, category, baseId) => ({
 
 const electronicsProducts = electronicsProductsSource
   .map((product, index) => normalizeProduct(product, index, 'Electronics', 1000))
-  .map(withRealProductImages);
+  .map(withEnhancedProductImages);
 
 const fashionProducts = fashionProductsSource
   .map((product, index) => normalizeProduct(product, index, 'Fashion', 5000));
 
 const flipkartProducts = flipkartProductsSource
-  .map((product, index) => normalizeProduct(product, index, product.category || 'Electronics', 9000));
+  .map((product, index) => normalizeProduct(product, index, product.category || 'Electronics', 9000))
+  .map(withEnhancedProductImages);
 
-const allProducts = [...electronicsProducts, ...fashionProducts, ...flipkartProducts];
+const allProducts = removeDuplicateProducts(
+  [...electronicsProducts, ...fashionProducts, ...flipkartProducts]
+    .filter(hasValidProductPrice),
+);
 const maxProductPrice = Math.max(...allProducts.map((product) => product.price), 1000);
 
 export const useProductStore = create((set, get) => ({
