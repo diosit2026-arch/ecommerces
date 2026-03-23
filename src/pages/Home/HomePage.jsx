@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -8,467 +8,213 @@ import {
   TrendingUp,
   Truck,
   Zap,
-  Boxes,
-  Play,
-  Star,
-  ShoppingBag,
-  CreditCard,
-  PackageCheck,
-  BarChart3,
 } from 'lucide-react';
 import { useProductStore } from '../../store/useProductStore';
 import ProductCard from '../../components/ui/ProductCard';
 import Seo from '../../components/seo/Seo';
-import { organizationJsonLd, siteName, siteUrl } from '../../utils/siteContent';
+import {
+  organizationJsonLd,
+  siteName,
+  siteUrl,
+  storefrontCategories,
+} from '../../utils/siteContent';
 
 const MotionDiv = motion.div;
 
-const heroSlides = [
-  {
-    id: 1,
-    eyebrow: 'Future-ready marketplace',
-    title: 'A storefront with motion, depth, and premium energy.',
-    subtitle:
-      'Shop trending tech, fresh fashion, and statement pieces in a home screen built to feel cinematic from the first scroll.',
-    accent: 'from-cyan-400 via-sky-500 to-blue-600',
-    image:
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 2,
-    eyebrow: 'Scroll into discovery',
-    title: 'Editorial product moments with immersive 3D styling.',
-    subtitle:
-      'Layered glass cards, floating highlights, and animated sections create a richer shopping experience on every device.',
-    accent: 'from-fuchsia-500 via-pink-500 to-orange-400',
-    image:
-      'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 3,
-    eyebrow: 'Built for conversion',
-    title: 'Deals, categories, and trends presented like a launch event.',
-    subtitle:
-      'Fast loading sections, bold storytelling, and motion-led product discovery help the homepage feel alive without losing usability.',
-    accent: 'from-emerald-400 via-teal-500 to-cyan-500',
-    image:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',
-  },
+const heroStats = [
+  { value: '5', label: 'high-energy category worlds' },
+  { value: '24h', label: 'fast dispatch promise' },
+  { value: '4.9/5', label: 'shopper delight score' },
 ];
 
 const features = [
   {
+    icon: Sparkles,
+    title: 'Infinity Cart Search',
+    desc: 'Search mobiles, fashion, beauty, appliances, and daily deals from one faster discovery bar.',
+  },
+  {
     icon: ShieldCheck,
-    title: 'Protected Checkout',
-    desc: 'Trusted payments with smooth purchase flow.',
+    title: 'Trusted Shopping Flow',
+    desc: 'Infinity Cart keeps product discovery, pricing, and checkout steps clearer and easier to trust.',
   },
   {
     icon: Truck,
-    title: 'Express Delivery',
-    desc: 'Fast dispatch for your most wanted items.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Curated Selection',
-    desc: 'Premium picks across style and electronics.',
-  },
-  {
-    icon: Zap,
-    title: 'Daily Drops',
-    desc: 'Limited deals that keep the homepage fresh.',
-  },
-];
-
-const categories = [
-  {
-    name: 'Electronics',
-    image:
-      'https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=80',
-    blurb: 'Cameras, laptops, audio, and devices with a sleek presentation.',
-  },
-  {
-    name: 'Fashion',
-    image:
-      'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80',
-    blurb: 'Seasonal statements, clean silhouettes, and standout looks.',
-  },
-  {
-    name: 'Home',
-    image:
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80',
-    blurb: 'Modern pieces that make rooms feel intentional and elevated.',
-  },
-  {
-    name: 'Beauty',
-    image:
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=80',
-    blurb: 'Glow-focused essentials and premium self-care favorites.',
-  },
-];
-
-const stats = [
-  { value: '25K+', label: 'Products styled for discovery' },
-  { value: '4.9/5', label: 'Average shopper delight score' },
-  { value: '24h', label: 'Fast delivery promise in top cities' },
-];
-
-const floatingCards = [
-  {
-    title: 'Motion-led hero',
-    detail: 'Layered gradients + hover depth',
-    position: 'top-8 right-2 sm:right-6',
-  },
-  {
-    title: 'Scroll reveal',
-    detail: 'Every section enters with presence',
-    position: 'bottom-16 left-0 sm:left-4',
-  },
-  {
-    title: 'Glass surfaces',
-    detail: 'Premium UI with soft reflections',
-    position: 'bottom-3 right-10 sm:right-20',
+    title: 'Fast Delivery Focus',
+    desc: 'From quick offers to smooth order flow, Infinity Cart is designed around faster everyday shopping.',
   },
 ];
 
 const revealUp = {
-  initial: { opacity: 0, y: 48 },
+  initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.8, ease: 'easeOut' },
+  viewport: { once: true, amount: 0.18 },
+  transition: { duration: 0.7, ease: 'easeOut' },
 };
 
 const HomePage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const heroRef = useRef(null);
   const { fetchProducts, getTrendingProducts, getDealsOfDay } = useProductStore();
   const trending = getTrendingProducts().slice(0, 4);
   const deals = getDealsOfDay().slice(0, 4);
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
-  const heroContentY = useTransform(scrollYProgress, [0, 1], ['0%', '24%']);
-  const heroGlowScale = useTransform(scrollYProgress, [0, 1], [1, 1.22]);
 
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5500);
-    return () => clearInterval(timer);
-  }, []);
-
-  const currentHero = heroSlides[currentSlide];
-
   return (
-    <div className="min-h-screen overflow-hidden bg-[#050816] text-white">
+    <div className="min-h-screen overflow-hidden bg-background text-textPrimary">
       <Seo
-        title="Online Shopping for Electronics, Fashion, Beauty, Home and More"
-        description="Explore NamshyCart for electronics, fashion, beauty products, home essentials, toys, furniture, and daily deals with secure checkout and a premium shopping experience."
-        keywords="NamshyCart home, online shopping India, electronics deals, fashion store, beauty products, home essentials, furniture shopping"
+        title="Online Shopping for Mobiles, Electronics, Beauty and More"
+        description="Explore Infinity Cart for mobiles, electronics, beauty, appliances, fashion, and daily deals with a cleaner shopping experience."
+        keywords="Infinity Cart home, mobiles store, electronics shopping India, beauty products, appliances, fashion, daily deals"
         canonical={siteUrl}
         jsonLd={organizationJsonLd}
       />
-      <section
-        ref={heroRef}
-        className="relative isolate min-h-[calc(100vh-4rem)] overflow-hidden border-b border-white/10"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_30%),radial-gradient(circle_at_80%_20%,_rgba(217,70,239,0.18),_transparent_20%),linear-gradient(180deg,_#07111f_0%,_#050816_50%,_#071422_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] opacity-25" />
 
-        <MotionDiv
-          style={{ scale: heroGlowScale }}
-          className={`absolute left-1/2 top-[18%] h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-gradient-to-r ${currentHero.accent} opacity-20 blur-[120px] transition-all duration-700`}
-        />
-
-        <MotionDiv
-          key={currentHero.id}
-          style={{ y: heroY }}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-          className="absolute inset-0"
-        >
-          <div className={`absolute inset-0 bg-gradient-to-br ${currentHero.accent} opacity-20`} />
-          <img
-            src={currentHero.image}
-            alt={currentHero.title}
-            className="absolute right-[-10%] top-[12%] hidden h-[68%] w-[46%] rounded-[2.5rem] object-cover object-center shadow-[0_40px_120px_rgba(0,0,0,0.55)] ring-1 ring-white/15 lg:block"
-          />
-        </MotionDiv>
-
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col justify-center px-4 py-16 sm:px-6 lg:px-8">
+      <section className="aurora-panel relative isolate overflow-hidden border-b border-white/10">
+        <div className="floating-orb left-[-3rem] top-24 h-44 w-44 bg-[#c7ff6b22]" />
+        <div className="floating-orb right-[-2rem] top-14 h-52 w-52 bg-[#ff7a5120]" style={{ animationDelay: '1.2s' }} />
+        <div className="floating-orb bottom-14 right-[18%] h-28 w-28 bg-[#63f5d220]" style={{ animationDelay: '2.4s' }} />
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <MotionDiv
-              key={`${currentHero.id}-content`}
-              style={{ y: heroContentY }}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="max-w-3xl"
-            >
-              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm text-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl">
-                <Sparkles className="h-4 w-4 text-cyan-300" />
-                <span>{currentHero.eyebrow}</span>
+            <MotionDiv initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#dfff9b33] bg-[#c7ff6b18] px-4 py-2 text-sm text-[#f3ffd1]">
+                <Sparkles size={16} className="text-primary" />
+                Full-spectrum storefront remix
               </div>
-
-              <h1 className="max-w-4xl font-['Space_Grotesk'] text-5xl font-bold leading-[0.96] text-white sm:text-6xl lg:text-7xl">
-                {currentHero.title}
+              <h1 className="section-title mt-6 max-w-4xl text-5xl font-bold leading-[0.95] text-textPrimary sm:text-6xl lg:text-7xl">
+                Infinity Cart brings premium motion, floating depth, and a cleaner shopping mood.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg text-slate-300 sm:text-xl">
-                {currentHero.subtitle}
-              </p>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
-                {siteName} helps shoppers discover trending electronics, fashion, beauty, home essentials, and curated daily deals in one polished online store.
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-textSecondary">
+                {siteName} now feels like a more polished brand experience, with richer animation, brighter contrast, deeper 3D layering, and more intentional page rhythm.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-1"
+                  className="shimmer-line inline-flex items-center justify-center gap-2 rounded-full bg-textPrimary px-7 py-4 font-semibold text-white transition-transform duration-300 hover:-translate-y-1"
                 >
-                  Explore Collection
+                  Enter the new experience
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   to="/products?sort=trending"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/6 px-7 py-4 font-semibold text-white backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1 hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#17313a14] bg-white/70 px-7 py-4 font-semibold text-textPrimary transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <Play className="h-4 w-4" />
-                  View Trending
+                  <TrendingUp className="h-4 w-4" />
+                  View the live drops
                 </Link>
               </div>
 
               <div className="mt-12 grid gap-4 sm:grid-cols-3">
-                {stats.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-[1.6rem] border border-white/10 bg-white/6 p-5 shadow-[0_24px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl"
-                  >
-                    <div className="font-['Space_Grotesk'] text-3xl font-bold text-white">
-                      {item.value}
-                    </div>
-                    <div className="mt-2 text-sm text-slate-300">{item.label}</div>
+                {heroStats.map((item) => (
+                  <div key={item.label} className="spot-grid rounded-[1.6rem] border border-[#17313a14] bg-white/80 p-5 backdrop-blur-xl">
+                    <div className="font-['Sora'] text-3xl font-bold text-textPrimary">{item.value}</div>
+                    <div className="mt-2 text-sm text-textSecondary">{item.label}</div>
                   </div>
                 ))}
               </div>
             </MotionDiv>
 
             <MotionDiv
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden h-[38rem] lg:block"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="tilt-shell grid gap-4"
             >
-              <div className="immersive-card absolute left-10 top-14 w-[18rem] rotate-[-9deg] p-4">
-                <div className="relative h-60 w-full overflow-hidden rounded-[1.6rem] border border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.28),transparent_35%),linear-gradient(180deg,_rgba(15,23,42,0.88),_rgba(2,6,23,0.98))] p-4">
-                  <div className="absolute right-4 top-4 rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-300">
-                    Bestseller
+              <div className="aurora-panel spot-grid rounded-[2rem] border border-[#17313a14] bg-[linear-gradient(135deg,rgba(156,198,59,0.12),rgba(255,255,255,0.95),rgba(248,244,237,0.96),rgba(239,132,85,0.1))] p-6 shadow-[0_24px_80px_rgba(86,98,105,0.12)]">
+                <div className="mb-6 flex items-center justify-between">
+                  <div>
+                    <p className="eyebrow">Control center</p>
+                    <h2 className="section-title mt-3 text-3xl font-bold text-textPrimary">Discovery now feels staged, layered, and alive.</h2>
                   </div>
-                  <div className="mt-2 flex items-start justify-between">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Storefront</p>
-                      <h4 className="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-white">
-                        Premium Drop
-                      </h4>
-                    </div>
-                    <ShoppingBag className="h-8 w-8 text-cyan-300" />
+                  <div className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-slate-950">Live</div>
+                </div>
+                <div className="spot-grid rounded-[1.6rem] border border-[#17313a14] bg-white/80 p-5">
+                  <div className="shimmer-line rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-textSecondary">
+                    Search InfinityCart for mobiles, fashion, beauty, appliances, accessories, and fast-moving deals
                   </div>
-                  <div className="mt-5 grid grid-cols-3 gap-3">
-                    {[
-                      'https://rukmini1.flixcart.com/image/312/312/xif0q/mobile/n/q/h/-original-imahgfmzjj8gtqbc.jpeg?q=70',
-                      'https://rukminim2.flixcart.com/image/312/312/xif0q/headphone/n/v/e/-original-imahf4j8svz6xg2n.jpeg?q=70',
-                      'https://rukminim2.flixcart.com/image/312/312/xif0q/shoe/q/k/y/8-rpd206-red-tape-white-navy-original-imah4yhkg2gzzhvm.jpeg?q=70',
-                    ].map((image) => (
-                      <div key={image} className="rounded-[1rem] border border-white/10 bg-white/5 p-2">
-                        <img src={image} alt="Featured product" className="h-20 w-full rounded-[0.8rem] object-cover" />
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                    {['Top mobile launches', 'Trend-led fashion picks', 'Beauty and self-care', 'Appliances with offers'].map((item, index) => (
+                      <div key={item} className="rounded-2xl border border-[#17313a12] bg-[#fbfaf6] px-4 py-3">
+                        <div className="text-xs uppercase tracking-[0.22em] text-[#dbffa0]">0{index + 1}</div>
+                        <div className="mt-2 text-sm font-medium text-textPrimary">{item}</div>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-[1rem] border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300">
-                    240+ products trending today
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-slate-300">Featured drop</p>
-                    <h3 className="font-['Space_Grotesk'] text-2xl font-bold text-white">
-                      Premium Edit
-                    </h3>
-                  </div>
-                  <div className="rounded-full bg-emerald-400/15 px-3 py-1 text-sm text-emerald-300">
-                    Live
-                  </div>
                 </div>
               </div>
 
-              <div className="absolute right-0 top-8 h-[28rem] w-[22rem] rounded-[2rem] border border-white/12 bg-slate-950/80 p-5 shadow-[0_32px_100px_rgba(0,0,0,0.55)] backdrop-blur-2xl">
-                <div className="mb-5 flex items-center justify-between">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.32em] text-slate-400">Scene</p>
-                    <h3 className="font-['Space_Grotesk'] text-2xl font-semibold text-white">
-                      Shopping Interface
-                    </h3>
-                  </div>
-                  <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-                    3D mode
-                  </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="immersive-card rounded-[1.7rem] bg-white p-5">
+                  <p className="eyebrow">InfinityCart promise</p>
+                  <h3 className="section-title mt-3 text-2xl font-bold text-textPrimary">One destination for everyday shopping momentum.</h3>
+                  <p className="mt-3 text-sm leading-7 text-textSecondary">
+                    InfinityCart brings together daily essentials, standout electronics, fashion upgrades, and beauty finds in one smoother storefront.
+                  </p>
                 </div>
-
-                <div className="relative h-[16rem] overflow-hidden rounded-[1.6rem] border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.22),transparent_40%),linear-gradient(180deg,_rgba(15,23,42,0.95),_rgba(2,6,23,0.98))] p-4">
-                  <div className="absolute inset-x-5 top-5 flex h-16 items-center justify-between rounded-[1.2rem] border border-white/10 bg-white/8 px-4 backdrop-blur-lg">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.26em] text-slate-400">Dashboard</p>
-                      <p className="mt-1 text-sm font-medium text-white">Orders and conversions</p>
-                    </div>
-                    <BarChart3 className="h-5 w-5 text-cyan-300" />
-                  </div>
-                  <div className="absolute left-6 top-24 w-[8.5rem] rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-cyan-300/30 to-blue-500/15 p-4 shadow-[0_20px_45px_rgba(56,189,248,0.18)]">
-                    <div className="flex items-center justify-between">
-                      <ShoppingBag className="h-5 w-5 text-white" />
-                      <span className="text-xs text-cyan-100">+18%</span>
-                    </div>
-                    <p className="mt-6 text-xs uppercase tracking-[0.22em] text-slate-200">Today sales</p>
-                    <p className="mt-2 font-['Space_Grotesk'] text-2xl font-bold text-white">Rs 2.4L</p>
-                  </div>
-                  <div className="absolute right-6 top-24 w-[8.5rem] rounded-[1.6rem] border border-white/10 bg-white/6 p-4 backdrop-blur-lg">
-                    <img
-                      src="https://rukmini1.flixcart.com/image/312/312/xif0q/mobile/r/8/8/-original-imahggevcrkzezzv.jpeg?q=70"
-                      alt="Top-selling product"
-                      className="h-24 w-full rounded-[1rem] object-cover"
-                    />
-                    <p className="mt-3 text-sm font-medium text-white">Top selling</p>
-                    <p className="text-xs text-slate-400">iPhone collection</p>
-                  </div>
-                  <div className="absolute bottom-6 left-6 right-6 rounded-[1.2rem] border border-white/10 bg-white/8 p-4 backdrop-blur-lg">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="rounded-xl bg-emerald-400/15 p-2 text-emerald-300">
-                          <PackageCheck className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-white">Orders packed</p>
-                          <p className="text-xs text-slate-400">128 shipments ready to dispatch</p>
-                        </div>
-                      </div>
-                      <div className="rounded-xl bg-white/6 p-2 text-cyan-300">
-                        <CreditCard className="h-4 w-4" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-5 grid grid-cols-3 gap-3">
-                  {['Depth', 'Motion', 'Glow'].map((label, index) => (
-                    <div
-                      key={label}
-                      className="rounded-2xl border border-white/10 bg-white/6 p-3 text-center"
-                    >
-                      <div className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                        0{index + 1}
-                      </div>
-                      <div className="mt-2 font-medium text-white">{label}</div>
-                    </div>
-                  ))}
+                <div className="immersive-card rounded-[1.7rem] bg-white p-5">
+                  <p className="eyebrow">Shopping advantage</p>
+                  <h3 className="section-title mt-3 text-2xl font-bold text-textPrimary">Faster discovery, clearer value, better flow.</h3>
+                  <p className="mt-3 text-sm leading-7 text-textSecondary">
+                    From trending products to deal-driven browsing, InfinityCart is shaped to help shoppers compare quickly and check out with confidence.
+                  </p>
                 </div>
               </div>
-
-              {floatingCards.map((card, index) => (
-                <MotionDiv
-                  key={card.title}
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4 + index, repeat: Infinity, ease: 'easeInOut' }}
-                  className={`absolute ${card.position} rounded-[1.4rem] border border-white/10 bg-white/10 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.32)] backdrop-blur-xl`}
-                >
-                  <div className="text-sm font-semibold text-white">{card.title}</div>
-                  <div className="mt-1 text-xs text-slate-300">{card.detail}</div>
-                </MotionDiv>
-              ))}
             </MotionDiv>
-          </div>
-
-          <div className="mt-12 flex items-center gap-3 self-start rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm text-slate-300 backdrop-blur-xl">
-            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
-            Scroll to explore the new visual storytelling
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-4">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-4 md:grid-cols-3">
           {features.map((feature, index) => (
             <MotionDiv
               key={feature.title}
               {...revealUp}
-              transition={{ duration: 0.7, delay: index * 0.08 }}
-              className="immersive-card flex items-start gap-4 p-5"
+              transition={{ duration: 0.7, delay: index * 0.06 }}
+              className="immersive-card aurora-panel rounded-[1.8rem] border border-[#17313a1f] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,238,230,0.92))] p-6 shadow-[0_18px_40px_rgba(86,98,105,0.14)]"
             >
-              <div className="rounded-2xl bg-white/10 p-3 text-cyan-300 shadow-[0_12px_30px_rgba(34,211,238,0.18)]">
+              <div className="pulse-ring mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#17313a14] bg-white text-primary shadow-[0_8px_24px_rgba(86,98,105,0.1)]">
                 <feature.icon className="h-5 w-5" />
               </div>
-              <div>
-                <h3 className="font-semibold text-white">{feature.title}</h3>
-                <p className="mt-1 text-sm text-slate-300">{feature.desc}</p>
-              </div>
+              <h3 className="text-lg font-semibold text-[#17313a]">{feature.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-[#4d6470]">{feature.desc}</p>
             </MotionDiv>
           ))}
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <MotionDiv {...revealUp} className="mb-10 flex items-end justify-between gap-6">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <MotionDiv {...revealUp} className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <p className="text-sm uppercase tracking-[0.32em] text-cyan-300">Category worlds</p>
-            <h2 className="mt-3 font-['Space_Grotesk'] text-4xl font-bold text-white">
-              Designed like immersive panels, not basic tiles.
+            <p className="eyebrow">Shop by world</p>
+            <h2 className="section-title mt-3 text-4xl font-bold text-textPrimary">
+              Every category gets a clearer identity.
             </h2>
           </div>
-          <Link
-            to="/products"
-            className="hidden items-center gap-2 rounded-full border border-white/12 bg-white/6 px-5 py-3 font-medium text-white backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1 md:inline-flex"
-          >
-            Browse all
-            <ArrowRight className="h-4 w-4" />
+          <Link to="/products" className="hidden text-sm font-medium text-textPrimary md:inline-flex">
+            Browse the full catalog
           </Link>
         </MotionDiv>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {categories.map((category, index) => (
+        <div className="grid gap-5 lg:grid-cols-5">
+          {storefrontCategories.map((category, index) => (
             <MotionDiv
               key={category.name}
               {...revealUp}
-              transition={{ duration: 0.8, delay: index * 0.08 }}
+              transition={{ duration: 0.7, delay: index * 0.05 }}
             >
               <Link
                 to={`/products?category=${encodeURIComponent(category.name)}`}
-                className="category-panel group block overflow-hidden rounded-[2rem] border border-white/10"
+                className="category-panel spot-grid block overflow-hidden rounded-[1.9rem] border border-[#17313a14] bg-white p-5"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/40" />
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="h-[24rem] w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-7">
-                  <div className="max-w-md rounded-[1.7rem] border border-white/12 bg-slate-950/45 p-5 shadow-[0_30px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-                    <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.28em] text-slate-200">
-                      <Boxes className="h-3.5 w-3.5" />
-                      Signature collection
-                    </div>
-                    <h3 className="font-['Space_Grotesk'] text-3xl font-bold text-white">
-                      {category.name}
-                    </h3>
-                    <p className="mt-3 text-sm text-slate-300">{category.blurb}</p>
-                    <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-cyan-300">
-                      Enter collection
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
-                  </div>
+                <div className="overflow-hidden rounded-[1.4rem] border border-[#17313a12] bg-[#f6f3eb] shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+                  <img src={category.image} alt={category.name} className="h-32 w-full object-cover" />
+                </div>
+                <div className="mt-5">
+                  <h3 className="text-xl font-semibold text-textPrimary">{category.name}</h3>
+                  <p className="mt-2 text-sm leading-7 text-textSecondary">{category.blurb}</p>
                 </div>
               </Link>
             </MotionDiv>
@@ -476,189 +222,71 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <MotionDiv
-          {...revealUp}
-          className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-[linear-gradient(135deg,rgba(8,15,29,0.92),rgba(18,42,66,0.85),rgba(9,15,32,0.96))] p-8 shadow-[0_32px_120px_rgba(0,0,0,0.45)]"
-        >
-          <div className="absolute -left-8 top-8 h-40 w-40 rounded-full bg-cyan-400/20 blur-3xl" />
-          <div className="absolute right-10 top-10 h-32 w-32 rounded-full bg-fuchsia-400/20 blur-3xl" />
-          <div className="relative grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.32em] text-cyan-300">Immersive strip</p>
-              <h2 className="mt-3 max-w-2xl font-['Space_Grotesk'] text-4xl font-bold text-white">
-                This homepage now feels closer to a product launch microsite.
-              </h2>
-              <p className="mt-4 max-w-2xl text-slate-300">
-                Stronger visual hierarchy, glassmorphism, floating depth, and scroll reveals help key sections feel premium while keeping navigation obvious.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {['3D depth', 'Scroll animation', 'Premium gradients', 'Responsive layout'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm text-slate-200 backdrop-blur-xl"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { title: 'Interactive focus', value: '92%', note: 'Higher visual emphasis on hero CTAs' },
-                { title: 'Motion timing', value: '0.8s', note: 'Smooth reveal pacing for sections' },
-                { title: 'UI depth', value: '12 layers', note: 'Glows, cards, image stacks, and overlays' },
-                { title: 'Shop feel', value: 'Studio', note: 'Designed to feel curated and premium' },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="immersive-card rounded-[1.7rem] p-5"
-                >
-                  <p className="text-sm text-slate-400">{item.title}</p>
-                  <div className="mt-3 font-['Space_Grotesk'] text-4xl font-bold text-white">
-                    {item.value}
-                  </div>
-                  <p className="mt-3 text-sm text-slate-300">{item.note}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </MotionDiv>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
-        <MotionDiv
-          {...revealUp}
-          className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.24)]"
-        >
-          <p className="text-sm uppercase tracking-[0.32em] text-cyan-300">Why {siteName}</p>
-          <h2 className="mt-3 font-['Space_Grotesk'] text-3xl font-bold text-white">
-            SEO-rich brand content that still feels useful for real shoppers.
-          </h2>
-          <div className="mt-5 grid gap-5 lg:grid-cols-3">
-            <p className="text-sm leading-7 text-slate-300">
-              {siteName} is built for customers searching for online shopping in India across electronics, fashion, beauty, home decor, toys, and appliances, with clear product discovery and clean navigation.
-            </p>
-            <p className="text-sm leading-7 text-slate-300">
-              The home page highlights trending products, curated collections, secure checkout messaging, and daily deals so visitors and search engines both understand the value of the store.
-            </p>
-            <p className="text-sm leading-7 text-slate-300">
-              Better typography, stronger section hierarchy, and more polished interface details make the website feel premium while supporting longer, keyword-relevant brand storytelling.
-            </p>
-          </div>
-        </MotionDiv>
-      </section>
-
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <MotionDiv {...revealUp} className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <p className="text-sm uppercase tracking-[0.32em] text-orange-300">Today only</p>
-            <h2 className="mt-3 flex items-center gap-3 font-['Space_Grotesk'] text-4xl font-bold text-white">
-              <Zap className="h-8 w-8 text-orange-400" />
+            <p className="eyebrow">Deals in motion</p>
+            <h2 className="section-title mt-3 flex items-center gap-3 text-4xl font-bold text-textPrimary">
+              <Zap className="h-8 w-8 text-secondary" />
               Deals of the Day
             </h2>
           </div>
-          <Link
-            to="/products"
-            className="hidden items-center gap-2 text-sm font-medium text-slate-200 transition-colors hover:text-white md:inline-flex"
-          >
+          <Link to="/products" className="hidden text-sm font-medium text-textPrimary md:inline-flex">
             View all deals
-            <ArrowRight className="h-4 w-4" />
           </Link>
         </MotionDiv>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {deals.map((product, index) => (
-            <MotionDiv
-              key={product.id}
-              {...revealUp}
-              transition={{ duration: 0.7, delay: index * 0.06 }}
-            >
+            <MotionDiv key={product.id} {...revealUp} transition={{ duration: 0.7, delay: index * 0.05 }}>
               <ProductCard product={product} />
             </MotionDiv>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
         <MotionDiv
           {...revealUp}
-          className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-[linear-gradient(135deg,rgba(12,19,38,0.96),rgba(18,24,52,0.88),rgba(6,13,28,0.96))] p-8 shadow-[0_28px_90px_rgba(0,0,0,0.45)] lg:p-10"
+          className="mb-10 rounded-[2.2rem] border border-[#17313a14] bg-[linear-gradient(135deg,#fffdfa_0%,#f7f2e8_52%,#fff8f2_100%)] p-8 shadow-[0_22px_70px_rgba(86,98,105,0.12)]"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(125,211,252,0.14),transparent_22%),radial-gradient(circle_at_80%_25%,rgba(244,114,182,0.14),transparent_20%)]" />
-          <div className="relative grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.32em] text-fuchsia-300">Momentum</p>
-              <h2 className="mt-3 font-['Space_Grotesk'] text-4xl font-bold text-white">
-                Trending products continue the premium visual rhythm.
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
+            <div className="rounded-[1.8rem] border border-[#17313a12] bg-[linear-gradient(145deg,#17313a_0%,#27444d_45%,#33555e_100%)] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <p className="eyebrow">Why Infinity Cart stands out</p>
+              <h2 className="section-title mt-3 text-4xl font-bold text-white">
+                Infinity Cart brings mobiles, fashion, beauty, appliances, and daily deals into one sharper shopping destination.
               </h2>
-              <p className="mt-4 max-w-2xl text-slate-300">
-                The last section keeps the page alive with product motion, contrast, and a clear path into the catalog.
+              <p className="mt-4 max-w-2xl text-base leading-8 text-[#b9d0d4]">
+                From high-visibility offers to cleaner product discovery, Infinity Cart is built to help shoppers move faster, compare better, and find more value across every category.
               </p>
-              <div className="mt-8 flex items-center gap-4 text-slate-300">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((item) => (
-                    <div
-                      key={item}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-xs text-white"
-                    >
-                      <Star className="h-4 w-4 text-yellow-300" />
-                    </div>
-                  ))}
-                </div>
-                <span>Popular right now across electronics and fashion.</span>
-              </div>
             </div>
-
-            <div className="rounded-[1.8rem] border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
-              <div className="mb-4 flex items-center justify-between">
-                <div className="font-medium text-white">Trending pulse</div>
-                <div className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs text-emerald-300">
-                  Updated live
+            <div className="grid gap-3 sm:grid-cols-2">
+              {['Smart category discovery', 'Fast-moving daily deals', 'Premium product presentation', 'Cleaner checkout journey'].map((item) => (
+                <div key={item} className="rounded-[1.4rem] border border-[#17313a14] bg-white px-5 py-5 text-sm font-semibold text-textPrimary shadow-[0_10px_24px_rgba(86,98,105,0.08)]">
+                  <div className="mb-3 h-1.5 w-14 rounded-full bg-gradient-to-r from-primary to-secondary" />
+                  {item}
                 </div>
-              </div>
-              <div className="space-y-3">
-                {['Gaming-ready laptops', 'Statement watches', 'Creator cameras', 'Smart audio accessories'].map((item, index) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/55 px-4 py-3"
-                  >
-                    <span className="text-slate-200">{item}</span>
-                    <span className="text-sm text-cyan-300">0{index + 1}</span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </MotionDiv>
-      </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
         <MotionDiv {...revealUp} className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <p className="text-sm uppercase tracking-[0.32em] text-emerald-300">Hot picks</p>
-            <h2 className="mt-3 flex items-center gap-3 font-['Space_Grotesk'] text-4xl font-bold text-white">
-              <TrendingUp className="h-8 w-8 text-emerald-300" />
+            <p className="eyebrow">Popular picks</p>
+            <h2 className="section-title mt-3 flex items-center gap-3 text-4xl font-bold text-textPrimary">
+              <TrendingUp className="h-8 w-8 text-primary" />
               Trending Now
             </h2>
           </div>
-          <Link
-            to="/products?sort=trending"
-            className="hidden items-center gap-2 text-sm font-medium text-slate-200 transition-colors hover:text-white md:inline-flex"
-          >
-            See what is rising
-            <ArrowRight className="h-4 w-4" />
+          <Link to="/products?sort=trending" className="hidden text-sm font-medium text-textPrimary md:inline-flex">
+            Explore the top movers
           </Link>
         </MotionDiv>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {trending.map((product, index) => (
-            <MotionDiv
-              key={product.id}
-              {...revealUp}
-              transition={{ duration: 0.7, delay: index * 0.06 }}
-            >
+            <MotionDiv key={product.id} {...revealUp} transition={{ duration: 0.7, delay: index * 0.05 }}>
               <ProductCard product={product} />
             </MotionDiv>
           ))}

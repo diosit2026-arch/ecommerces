@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Star, ShoppingCart, Heart, ImageOff } from 'lucide-react';
+import { ArrowRight, Heart, ImageOff, ShoppingCart, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useCartStore } from '../../store/useCartStore';
 
 const formatInr = (value) => `Rs ${Number(value || 0).toLocaleString('en-IN')}`;
@@ -9,109 +10,133 @@ const ProductCard = ({ product }) => {
   const addToCart = useCartStore((state) => state.addToCart);
   const [isHovered, setIsHovered] = React.useState(false);
   const [isAdded, setIsAdded] = React.useState(false);
+  const [tiltStyle, setTiltStyle] = React.useState({});
   const hasImage = Boolean(product.image);
 
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleAddToCart = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     addToCart(product);
     setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 2000);
-  };
-
-  const handleWishlist = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    setTimeout(() => setIsAdded(false), 1800);
   };
 
   return (
-    <div
+    <motion.div
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="bg-surface rounded-xl overflow-hidden shadow-lg border border-gray-800 flex flex-col h-full group relative"
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setTiltStyle({});
+      }}
+      onMouseMove={(event) => {
+        const bounds = event.currentTarget.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width;
+        const y = (event.clientY - bounds.top) / bounds.height;
+        setTiltStyle({
+          transform: `perspective(1400px) rotateX(${(0.5 - y) * 10}deg) rotateY(${(x - 0.5) * 12}deg) translateY(-6px)`,
+        });
+      }}
+      style={tiltStyle}
+      className="group tilt-shell aurora-panel flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-[#17313a14] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(248,244,237,0.98))] shadow-[0_18px_50px_rgba(86,98,105,0.12)] transition-all duration-300 hover:border-[#9cc63b55]"
     >
-      <div className="absolute top-3 left-3 flex flex-col gap-2 z-10">
-        {product.isDeal && (
-          <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded shadow-sm">
-            DEAL
-          </span>
-        )}
-        {product.isTrending && (
-          <span className="bg-secondary text-white text-xs font-bold px-2 py-1 rounded shadow-sm">
-            TRENDING
-          </span>
-        )}
+      <div className="relative tilt-layer">
+        <div className="floating-orb left-6 top-8 h-14 w-14 bg-[#9cc63b24]" />
+        <div className="floating-orb right-7 top-16 h-10 w-10 bg-[#ef845524]" style={{ animationDelay: '1.2s' }} />
+        <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-2">
+          {product.isDeal && (
+            <span className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-950">
+              Deal
+            </span>
+          )}
+          {product.isTrending && (
+            <span className="rounded-full bg-primary px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-950">
+              Trending
+            </span>
+          )}
+        </div>
+
+        <button
+          type="button"
+          className="absolute right-3 top-3 z-10 rounded-full border border-[#17313a14] bg-white/80 p-2 text-textSecondary backdrop-blur-sm transition-colors hover:text-textPrimary"
+        >
+          <Heart size={17} />
+        </button>
+
+        <Link to={`/products/${product.id}`} className="spot-grid block aspect-[1.02] overflow-hidden bg-[#f0ece4]">
+          {hasImage ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-full w-full object-cover transition-transform duration-700 ease-in-out"
+              style={{ transform: isHovered ? 'scale(1.11) rotate(-1deg)' : 'scale(1)' }}
+            />
+          ) : (
+            <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#f3eee6] to-[#fbfaf6] text-textSecondary">
+              <ImageOff size={36} />
+              <span className="text-sm font-medium">No Image</span>
+            </div>
+          )}
+          <div className={`absolute inset-0 bg-[linear-gradient(180deg,rgba(156,198,59,0.06),transparent_40%,rgba(23,49,58,0.16))] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-80'}`} />
+        </Link>
       </div>
 
-      <button
-        onClick={handleWishlist}
-        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/40 text-gray-300 hover:text-secondary hover:bg-black/60 transition-colors backdrop-blur-sm"
-      >
-        <Heart size={18} />
-      </button>
-
-      <Link to={`/products/${product.id}`} className="block relative aspect-square overflow-hidden bg-gray-900 flex-shrink-0">
-        {hasImage ? (
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-            style={{ transform: isHovered ? 'scale(1.1)' : 'scale(1)' }}
-          />
-        ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-800 to-slate-900 text-gray-400">
-            <ImageOff size={36} />
-            <span className="text-sm font-medium">No Image</span>
-          </div>
-        )}
-        <div
-          className={`absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-        >
-          <button
-            onClick={handleAddToCart}
-            disabled={isAdded}
-            className={`flex items-center space-x-2 px-6 py-3 rounded-full font-semibold shadow-xl transform transition-transform duration-300 ${
-              isAdded
-                ? 'bg-accent text-white scale-105'
-                : 'bg-primary text-white hover:bg-indigo-600 scale-100'
-            }`}
-          >
-            <ShoppingCart size={18} />
-            <span>{isAdded ? 'Added to Cart' : 'Quick Add'}</span>
-          </button>
-        </div>
-      </Link>
-
-      <div className="p-4 flex-1 flex flex-col justify-between">
+      <div className="flex flex-1 flex-col justify-between p-5">
         <div>
-          <div className="text-xs text-textSecondary uppercase tracking-wider mb-1">
-            {product.brand}
+          <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7d9730]">
+            {product.brand || product.category}
           </div>
-          <Link to={`/products/${product.id}`} className="block block group-hover:text-primary transition-colors">
-            <h3 className="font-semibold text-white leading-tight mb-2 line-clamp-2">
+          <Link to={`/products/${product.id}`} className="block">
+            <h3 className="line-clamp-2 text-lg font-semibold leading-7 text-textPrimary transition-colors group-hover:text-[#4e6a1d]">
               {product.name}
             </h3>
           </Link>
 
-          <div className="flex items-center space-x-1 mb-3">
-            <Star size={14} className="text-yellow-400 fill-current" />
-            <span className="text-sm text-gray-300 font-medium">{product.rating}</span>
-            <span className="text-xs text-textSecondary">({product.reviewsCount})</span>
+          <div className="mt-3 flex items-center gap-2 text-sm text-textPrimary">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[#f4f0e8] px-2.5 py-1">
+              <Star size={13} className="fill-current text-primary" />
+              {product.rating}
+            </span>
+            <span className="text-textSecondary">({product.reviewsCount})</span>
+            <span className="rounded-full border border-white/8 px-2.5 py-1 text-xs text-textSecondary">
+              {product.category}
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center justify-between mt-auto">
-          <div className="flex items-baseline space-x-2">
-            <span className="text-xl font-bold text-white">{formatInr(product.price)}</span>
-            {product.originalPrice && product.originalPrice > product.price && (
-              <span className="text-sm text-textSecondary line-through">
-                {formatInr(product.originalPrice)}
-              </span>
-            )}
+        <div className="mt-5">
+          <div className="flex items-end justify-between gap-3">
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-textPrimary">{formatInr(product.price)}</span>
+              {product.originalPrice && product.originalPrice > product.price && (
+                <span className="text-sm text-textSecondary line-through">
+                  {formatInr(product.originalPrice)}
+                </span>
+              )}
+            </div>
+            <Link
+              to={`/products/${product.id}`}
+              className="inline-flex items-center gap-1 text-sm font-medium text-[#dffef8] transition-transform hover:translate-x-0.5"
+            >
+              View
+              <ArrowRight size={15} />
+            </Link>
           </div>
+
+          <button
+            onClick={handleAddToCart}
+            disabled={isAdded}
+            className={`mt-4 flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold transition-all ${
+              isAdded
+                ? 'bg-accent text-slate-950'
+                : 'shimmer-line bg-white text-slate-950 hover:bg-[#f2ffc8]'
+            }`}
+          >
+            <ShoppingCart size={17} />
+            {isAdded ? 'Added to Cart' : 'Quick Add'}
+          </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

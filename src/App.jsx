@@ -28,10 +28,10 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="app-shell flex min-h-screen flex-col">
         <Navbar />
         
-        <main className="flex-grow flex flex-col pt-16 mt-0">
+        <main className="mt-0 flex flex-grow flex-col pt-16">
           <Suspense fallback={<Loader fullScreen={true} />}>
             <AnimatePresence mode="wait">
               <Routes>
@@ -45,12 +45,12 @@ function App() {
                 
                 {/* 404 Fallback */}
                 <Route path="*" element={
-                  <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
-                    <h1 className="text-6xl font-bold text-primary mb-4">404</h1>
-                    <h2 className="text-2xl font-semibold text-white mb-6">Page Not Found</h2>
-                    <p className="text-gray-400 mb-8 max-w-md mx-auto">The page you are looking for may have moved, been renamed, or is not available on NamshyCart right now.</p>
-                    <a href="/" className="px-6 py-3 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition-colors">
-                      Return to NamshyCart
+                  <div className="mx-4 flex min-h-[60vh] flex-col items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] px-4 text-center shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
+                    <h1 className="section-title mb-4 text-6xl font-bold text-primary">404</h1>
+                    <h2 className="mb-6 text-2xl font-semibold text-white">Page Not Found</h2>
+                    <p className="mx-auto mb-8 max-w-md text-textSecondary">The page you are looking for may have moved, been renamed, or is not available on Infinity Cart right now.</p>
+                    <a href="/" className="rounded-full bg-white px-6 py-3 font-bold text-slate-950 transition-colors hover:bg-orange-100">
+                      Return to Infinity Cart
                     </a>
                   </div>
                 } />

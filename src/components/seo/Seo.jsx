@@ -34,25 +34,25 @@ const Seo = ({
   title,
   description,
   keywords,
-  canonical = 'https://www.namshycart.com/',
-  image = 'https://www.namshycart.com/og-image.jpg',
+  canonical = 'https://www.infinitycart.com/',
+  image = 'https://www.infinitycart.com/og-image.jpg',
   type = 'website',
   jsonLd,
 }) => {
   useEffect(() => {
-    const siteTitle = title ? `${title} | NamshyCart` : 'NamshyCart | Online Shopping for Electronics, Fashion, Home & More';
+    const siteTitle = title ? `${title} | Infinity Cart` : 'Infinity Cart | Mobiles, Electronics, Beauty, Appliances and Fashion';
 
     document.title = siteTitle;
     setMetaByName('description', description);
     setMetaByName('keywords', keywords);
     setMetaByName('robots', 'index, follow, max-image-preview:large');
-    setMetaByName('author', 'NamshyCart');
+    setMetaByName('author', 'Infinity Cart');
     setMetaByProperty('og:title', siteTitle);
     setMetaByProperty('og:description', description);
     setMetaByProperty('og:type', type);
     setMetaByProperty('og:url', canonical);
     setMetaByProperty('og:image', image);
-    setMetaByProperty('og:site_name', 'NamshyCart');
+    setMetaByProperty('og:site_name', 'Infinity Cart');
     setMetaByName('twitter:card', 'summary_large_image');
     setMetaByName('twitter:title', siteTitle);
     setMetaByName('twitter:description', description);

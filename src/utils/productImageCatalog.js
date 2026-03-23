@@ -93,4 +93,13 @@ export const removeDuplicateProducts = (products) => {
   return [...groupedProducts.values()].map(mergeProductGroup);
 };
 
-export const hasValidProductPrice = (product) => Number(product.price) > 0;
+const hasUsableProductImage = (product) => {
+  const primaryImage = typeof product.image === 'string' ? product.image.trim() : '';
+  const galleryImages = Array.isArray(product.images)
+    ? product.images.filter((image) => typeof image === 'string' && image.trim())
+    : [];
+
+  return Boolean(primaryImage || galleryImages.length > 0);
+};
+
+export const hasValidProductPrice = (product) => Number(product.price) > 0 && hasUsableProductImage(product);
