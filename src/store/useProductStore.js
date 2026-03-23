@@ -10,17 +10,26 @@ import {
 
 const USD_TO_INR_RATE = 83;
 
-const toInrAmount = (value) => {
+const usesDirectInrPricing = (product = {}, category = '') => (
+  category === 'Fashion'
+  || product.measurements?.source === 'Flipkart'
+  || typeof product.source === 'string'
+);
+
+const toInrAmount = (value, options = {}) => {
   const numericValue = Number(value) || 0;
+  if (options.preserveInr) {
+    return Math.round(numericValue);
+  }
   if (numericValue >= 1000) {
     return Math.round(numericValue);
   }
   return Math.round(numericValue * USD_TO_INR_RATE);
 };
 
-const getReasonableOriginalPrice = (priceValue, originalValue) => {
-  const price = toInrAmount(priceValue);
-  const candidateOriginal = toInrAmount(originalValue || 0);
+const getReasonableOriginalPrice = (priceValue, originalValue, options = {}) => {
+  const price = toInrAmount(priceValue, options);
+  const candidateOriginal = toInrAmount(originalValue || 0, options);
 
   if (!price) {
     return 0;
@@ -41,27 +50,32 @@ const getReasonableOriginalPrice = (priceValue, originalValue) => {
   return Math.min(candidateOriginal, maxReasonableOriginal);
 };
 
-const normalizeProduct = (product, index, category, baseId) => ({
-  ...product,
-  id: baseId + index + 1,
-  category,
-  price: toInrAmount(product.price),
-  image: product.image || product.images?.[0] || '',
-  images: Array.isArray(product.images) ? product.images : [],
-  originalPrice: getReasonableOriginalPrice(product.price, product.originalPrice),
-  reviewsCount: product.reviewsCount || product.stock || 0,
-  isTrending: product.isTrending ?? false,
-  isDeal: product.isDeal ?? false,
-  sizes: Array.isArray(product.sizes) ? product.sizes : [],
-  measurements: product.measurements || {},
-});
+const normalizeProduct = (product, index, category, baseId) => {
+  const preserveInr = usesDirectInrPricing(product, category);
+
+  return {
+    ...product,
+    id: baseId + index + 1,
+    category,
+    price: toInrAmount(product.price, { preserveInr }),
+    image: product.image || product.images?.[0] || '',
+    images: Array.isArray(product.images) ? product.images : [],
+    originalPrice: getReasonableOriginalPrice(product.price, product.originalPrice, { preserveInr }),
+    reviewsCount: product.reviewsCount || product.stock || 0,
+    isTrending: product.isTrending ?? false,
+    isDeal: product.isDeal ?? false,
+    sizes: Array.isArray(product.sizes) ? product.sizes : [],
+    measurements: product.measurements || {},
+  };
+};
 
 const electronicsProducts = electronicsProductsSource
   .map((product, index) => normalizeProduct(product, index, 'Electronics', 1000))
   .map(withEnhancedProductImages);
 
 const fashionProducts = fashionProductsSource
-  .map((product, index) => normalizeProduct(product, index, 'Fashion', 5000));
+  .map((product, index) => normalizeProduct(product, index, 'Fashion', 5000))
+  .map(withEnhancedProductImages);
 
 const flipkartProducts = flipkartProductsSource
   .map((product, index) => normalizeProduct(product, index, product.category || 'Electronics', 9000))
@@ -80,6 +94,7 @@ export const useProductStore = create((set, get) => ({
 
   filters: {
     category: 'All',
+    fashionType: 'All',
     priceRange: [0, maxProductPrice],
     rating: 0,
     searchQuery: '',
@@ -93,6 +108,7 @@ export const useProductStore = create((set, get) => ({
   resetFilters: () => set({
     filters: {
       category: 'All',
+      fashionType: 'All',
       priceRange: [0, maxProductPrice],
       rating: 0,
       searchQuery: '',
@@ -104,6 +120,19 @@ export const useProductStore = create((set, get) => ({
     const { products, filters } = get();
     return products.filter((product) => {
       if (filters.category !== 'All' && product.category !== filters.category) return false;
+      if (filters.fashionType !== 'All' && product.category === 'Fashion') {
+        const searchableFashionText = [
+          product.name,
+          product.description,
+          product.measurements?.type,
+          product.measurements?.scrapedTitle,
+        ]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
+
+        if (!searchableFashionText.includes(filters.fashionType.toLowerCase())) return false;
+      }
       if (filters.brand !== 'All' && product.brand !== filters.brand) return false;
       if (product.price < filters.priceRange[0] || product.price > filters.priceRange[1]) return false;
       if (product.rating < filters.rating) return false;

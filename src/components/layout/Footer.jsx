@@ -72,11 +72,11 @@ const Footer = () => {
             <ul className="mt-4 space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-0.5 text-cyan-300" />
-                <span>NamshyCart Commerce Hub, Hyderabad, Telangana, India</span>
+                <span>Arihant Technopolis, 131 Rajiv Gandhi Salai, Kandhanchavadi, Perungudi, Chennai, Tamil Nadu 600096</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-cyan-300" />
-                <span>+91 90000 12345</span>
+                <span>+91 90477 70806</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-cyan-300" />

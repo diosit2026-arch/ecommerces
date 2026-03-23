@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { CreditCard, CheckCircle, Lock, ArrowRight, Banknote } from 'lucide-react';
+import { CheckCircle, Lock, ArrowRight, Banknote } from 'lucide-react';
 import { useCartStore } from '../../store/useCartStore';
 import { useUserStore } from '../../store/useUserStore';
 import Seo from '../../components/seo/Seo';
@@ -14,9 +14,6 @@ const formatInr = (value) => `Rs ${Number(value || 0).toLocaleString('en-IN')}`;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phonePattern = /^[6-9]\d{9}$/;
 const pinCodePattern = /^\d{6}$/;
-const cardNumberPattern = /^\d{16}$/;
-const expiryPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
-const cvcPattern = /^\d{3,4}$/;
 
 const CheckoutPage = () => {
   const { items, getCartTotal, clearCart } = useCartStore();
@@ -24,9 +21,8 @@ const CheckoutPage = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [hasSubmittedOrder, setHasSubmittedOrder] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState('card');
+  const paymentMethod = 'cod';
   const [shippingErrors, setShippingErrors] = useState({});
-  const [paymentErrors, setPaymentErrors] = useState({});
   const [checkoutForm, setCheckoutForm] = useState({
     firstName: user?.name?.split(' ')[0] || '',
     lastName: user?.name?.split(' ').slice(1).join(' ') || '',
@@ -38,10 +34,6 @@ const CheckoutPage = () => {
     state: 'Telangana',
     postalCode: '',
     country: 'India',
-    paymentName: user?.name || '',
-    cardNumber: '',
-    expiryDate: '',
-    cvc: '',
   });
 
   const subtotal = getCartTotal();
@@ -57,7 +49,6 @@ const CheckoutPage = () => {
   const updateField = (field, value) => {
     setCheckoutForm((state) => ({ ...state, [field]: value }));
     setShippingErrors((state) => ({ ...state, [field]: '' }));
-    setPaymentErrors((state) => ({ ...state, [field]: '' }));
   };
 
   const validateShippingForm = () => {
@@ -76,25 +67,6 @@ const CheckoutPage = () => {
     return errors;
   };
 
-  const validatePaymentForm = () => {
-    const errors = {};
-
-    if (paymentMethod === 'card') {
-      if (!checkoutForm.paymentName.trim()) errors.paymentName = 'Name on card is required.';
-      if (!cardNumberPattern.test(checkoutForm.cardNumber.replace(/\s+/g, ''))) {
-        errors.cardNumber = 'Enter a valid 16-digit card number.';
-      }
-      if (!expiryPattern.test(checkoutForm.expiryDate.trim())) {
-        errors.expiryDate = 'Use MM/YY format.';
-      }
-      if (!cvcPattern.test(checkoutForm.cvc.trim())) {
-        errors.cvc = 'Enter a valid CVC.';
-      }
-    }
-
-    return errors;
-  };
-
   const handleInfoSubmit = (e) => {
     e.preventDefault();
     const errors = validateShippingForm();
@@ -107,12 +79,6 @@ const CheckoutPage = () => {
   };
 
   const submitPayment = () => {
-    const errors = validatePaymentForm();
-    setPaymentErrors(errors);
-    if (Object.keys(errors).length > 0) {
-      return;
-    }
-
     const shippingAddress = {
       title: 'Delivery Address',
       fullName: `${checkoutForm.firstName} ${checkoutForm.lastName}`.trim(),
@@ -359,21 +325,8 @@ const CheckoutPage = () => {
                 </div>
 
                 <form onSubmit={handlePaymentSubmit} noValidate>
-                  <div className="mb-8 space-y-4">
-                    <label className={`relative flex cursor-pointer rounded-xl border p-4 focus:outline-none ${paymentMethod === 'card' ? 'border-primary bg-gray-800/50' : 'border-gray-700 bg-background/60'}`}>
-                      <input type="radio" name="payment_method" value="card" checked={paymentMethod === 'card'} onChange={() => setPaymentMethod('card')} className="hidden" />
-                      <span className="flex flex-1 items-center">
-                        <span className="flex flex-col">
-                          <span className="block text-sm font-bold text-white flex items-center">
-                            <CreditCard className="mr-2 text-primary" size={20} /> Credit or Debit Card
-                          </span>
-                          <span className="mt-1 text-xs text-gray-400">Pay online with a card and complete instantly.</span>
-                        </span>
-                      </span>
-                      {paymentMethod === 'card' && <CheckCircle className="h-5 w-5 text-primary" />}
-                    </label>
-                    <label className={`relative flex cursor-pointer rounded-xl border p-4 focus:outline-none ${paymentMethod === 'cod' ? 'border-primary bg-gray-800/50' : 'border-gray-700 bg-background/60'}`}>
-                      <input type="radio" name="payment_method" value="cod" checked={paymentMethod === 'cod'} onChange={() => setPaymentMethod('cod')} className="hidden" />
+                  <div className="mb-8">
+                    <div className="relative flex rounded-xl border border-primary bg-gray-800/50 p-4">
                       <span className="flex flex-1 items-center">
                         <span className="flex flex-col">
                           <span className="block text-sm font-bold text-white flex items-center">
@@ -382,61 +335,34 @@ const CheckoutPage = () => {
                           <span className="mt-1 text-xs text-gray-400">Pay when your order reaches your address.</span>
                         </span>
                       </span>
-                      {paymentMethod === 'cod' && <CheckCircle className="h-5 w-5 text-primary" />}
-                    </label>
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                    </div>
                   </div>
 
-                  {paymentMethod === 'card' ? (
-                    <div className="mb-8 p-6 border border-gray-700 rounded-xl bg-background">
-                      <div className="mb-4">
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Card number</label>
-                        <input value={checkoutForm.cardNumber} onChange={(e) => updateField('cardNumber', e.target.value)} placeholder="0000 0000 0000 0000" className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
-                        {paymentErrors.cardNumber && <p className="mt-2 text-xs text-red-400">{paymentErrors.cardNumber}</p>}
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="mb-4">
-                          <label className="block text-sm font-medium text-gray-300 mb-2">Expiration date (MM/YY)</label>
-                          <input value={checkoutForm.expiryDate} onChange={(e) => updateField('expiryDate', e.target.value)} placeholder="08/28" className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
-                          {paymentErrors.expiryDate && <p className="mt-2 text-xs text-red-400">{paymentErrors.expiryDate}</p>}
-                        </div>
-                        <div className="mb-4">
-                          <label className="block text-sm font-medium text-gray-300 mb-2">Security code (CVC)</label>
-                          <input value={checkoutForm.cvc} onChange={(e) => updateField('cvc', e.target.value)} placeholder="123" className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
-                          {paymentErrors.cvc && <p className="mt-2 text-xs text-red-400">{paymentErrors.cvc}</p>}
-                        </div>
-                      </div>
-                      <div className="mb-4">
-                        <label className="block text-sm font-medium text-gray-300 mb-2">Name on card</label>
-                        <input value={checkoutForm.paymentName} onChange={(e) => updateField('paymentName', e.target.value)} className="w-full bg-background border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" />
-                        {paymentErrors.paymentName && <p className="mt-2 text-xs text-red-400">{paymentErrors.paymentName}</p>}
+                  <div className="mb-8 rounded-xl border border-gray-700 bg-background p-6">
+                    <div className="flex items-start space-x-4">
+                      <Banknote className="mt-1 text-primary" size={24} />
+                      <div>
+                        <h4 className="text-white font-bold mb-1">Cash on Delivery selected</h4>
+                        <p className="text-sm text-gray-400">You can place the order now and pay in cash when the delivery arrives.</p>
                       </div>
                     </div>
-                  ) : (
-                    <div className="mb-8 rounded-xl border border-gray-700 bg-background p-6">
-                      <div className="flex items-start space-x-4">
-                        <Banknote className="mt-1 text-primary" size={24} />
-                        <div>
-                          <h4 className="text-white font-bold mb-1">Cash on Delivery selected</h4>
-                          <p className="text-sm text-gray-400">You can place the order now and pay in cash when the delivery arrives.</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  </div>
 
                   <div className="bg-gray-800 rounded-xl p-6 mb-8 flex items-start space-x-4">
                     <Lock className="text-green-500 flex-shrink-0" size={24} />
                     <div>
-                      <h4 className="text-white font-bold mb-1">{paymentMethod === 'cod' ? 'Cash on delivery confirmation' : 'Secure payment processing'}</h4>
-                      <p className="text-sm text-gray-400">{paymentMethod === 'cod' ? 'Your order will be confirmed now and payment will be collected at delivery.' : 'All transactions are encrypted and secured. We never store your full card details.'}</p>
+                      <h4 className="text-white font-bold mb-1">Cash on delivery confirmation</h4>
+                      <p className="text-sm text-gray-400">Your order will be confirmed now and payment will be collected at delivery.</p>
                     </div>
                   </div>
 
                   <button
-                    type={paymentMethod === 'cod' ? 'button' : 'submit'}
-                    onClick={paymentMethod === 'cod' ? submitPayment : undefined}
+                    type="button"
+                    onClick={submitPayment}
                     className="w-full py-4 bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-opacity"
                   >
-                    {paymentMethod === 'cod' ? `Place COD Order for ${formatInr(total)}` : `Pay ${formatInr(total)} Now`}
+                    {`Place COD Order for ${formatInr(total)}`}
                   </button>
                 </form>
               </div>

@@ -6,18 +6,33 @@ import ProductCard from '../../components/ui/ProductCard';
 import Seo from '../../components/seo/Seo';
 import { siteName, siteUrl } from '../../utils/siteContent';
 
+const FOOTWEAR_KEYWORDS = ['shoe', 'shoes', 'sneaker', 'sneakers', 'slipper', 'slippers', 'loafer', 'loafers', 'heel', 'heels', 'sandal', 'sandals', 'clog', 'clogs'];
+const FASHION_FILTER_OPTIONS = [
+  { label: 'Shoes', terms: ['shoe', 'shoes'] },
+  { label: 'Dresses', terms: ['dress', 'dresses'] },
+  { label: 'Slippers', terms: ['slipper', 'slippers', 'slides'] },
+  { label: 'Heels', terms: ['heel', 'heels'] },
+  { label: 'Sandals', terms: ['sandal', 'sandals'] },
+  { label: 'Clogs', terms: ['clog', 'clogs'] },
+  { label: 'Sneakers', terms: ['sneaker', 'sneakers'] },
+  { label: 'Loafers', terms: ['loafer', 'loafers'] },
+];
+
 const ProductListingPage = () => {
   const [searchParams] = useSearchParams();
   const { 
     isLoading, 
     fetchProducts, 
     getFilteredProducts, 
-    setFilters 
+    setFilters,
+    filters,
   } = useProductStore();
   
-  const [sortBy, setSortBy] = useState('featured'); // featured, price-low, price-high, newest
   const categoryParam = searchParams.get('category');
   const searchParam = searchParams.get('search');
+  const isFootwearBrowse = categoryParam === 'Fashion'
+    || FOOTWEAR_KEYWORDS.some((keyword) => (searchParam || '').toLowerCase().includes(keyword));
+  const [sortBy, setSortBy] = useState(isFootwearBrowse ? 'price-low' : 'featured'); // featured, price-low, price-high, newest
 
   useEffect(() => {
     fetchProducts();
@@ -25,11 +40,16 @@ const ProductListingPage = () => {
     // Keep store filters in sync with the URL so old searches/categories do not stick around.
     setFilters({
       category: categoryParam || 'All',
+      fashionType: 'All',
       searchQuery: searchParam || '',
     });
     
     window.scrollTo(0, 0);
   }, [searchParams, fetchProducts, setFilters]);
+
+  useEffect(() => {
+    setSortBy(isFootwearBrowse ? 'price-low' : 'featured');
+  }, [isFootwearBrowse]);
 
   // Apply sorting to filtered products
   const products = getFilteredProducts();
@@ -52,6 +72,31 @@ const ProductListingPage = () => {
     : searchParam
       ? `Find products matching ${searchParam} on ${siteName} across electronics, fashion, beauty, home, and more.`
       : `${siteName} brings together electronics, fashion, beauty, home essentials, toys, appliances, and daily deals in one online shopping destination.`;
+  const showFashionFilters = categoryParam === 'Fashion' || products.some((product) => product.category === 'Fashion');
+  const fashionProducts = showFashionFilters
+    ? useProductStore.getState().products.filter((product) => product.category === 'Fashion')
+    : [];
+  const availableFashionFilters = ['All', ...FASHION_FILTER_OPTIONS
+    .filter((option) => fashionProducts.some((product) => {
+      const searchableFashionText = [
+        product.name,
+        product.description,
+        product.measurements?.type,
+        product.measurements?.scrapedTitle,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+      return option.terms.some((term) => searchableFashionText.includes(term));
+    }))
+    .map((option) => option.label)];
+
+  useEffect(() => {
+    if (!availableFashionFilters.includes(filters.fashionType)) {
+      setFilters({ fashionType: 'All' });
+    }
+  }, [availableFashionFilters, filters.fashionType, setFilters]);
 
   return (
     <div className="min-h-screen bg-background pt-8 pb-20">
@@ -91,6 +136,28 @@ const ProductListingPage = () => {
               </div>
             </div>
           </div>
+
+          {showFashionFilters && (
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Fashion Filter</p>
+              <div className="mt-3 flex flex-wrap gap-3">
+                {availableFashionFilters.map((fashionType) => (
+                  <button
+                    key={fashionType}
+                    type="button"
+                    onClick={() => setFilters({ fashionType })}
+                    className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                      filters.fashionType === fashionType
+                        ? 'border-cyan-300 bg-cyan-400/10 text-white'
+                        : 'border-white/12 bg-white/5 text-slate-300 hover:border-cyan-400/40 hover:text-white'
+                    }`}
+                  >
+                    {fashionType}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="flex items-start gap-8">

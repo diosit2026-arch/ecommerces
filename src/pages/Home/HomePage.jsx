@@ -487,13 +487,13 @@ const HomePage = () => {
             <div>
               <p className="text-sm uppercase tracking-[0.32em] text-cyan-300">Immersive strip</p>
               <h2 className="mt-3 max-w-2xl font-['Space_Grotesk'] text-4xl font-bold text-white">
-                This homepage now feels closer to a product launch microsite.
+                NamshyCart now feels closer to a premium multi-category shopping destination.
               </h2>
               <p className="mt-4 max-w-2xl text-slate-300">
-                Stronger visual hierarchy, glassmorphism, floating depth, and scroll reveals help key sections feel premium while keeping navigation obvious.
+                Curated sections, stronger visual hierarchy, and a more polished storefront help shoppers explore deals, discover categories, and move toward checkout with confidence.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                {['3D depth', 'Scroll animation', 'Premium gradients', 'Responsive layout'].map((tag) => (
+                {['Curated deals', 'Trusted checkout', 'Category discovery', 'Responsive shopping'].map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-white/12 bg-white/8 px-4 py-2 text-sm text-slate-200 backdrop-blur-xl"
@@ -506,10 +506,10 @@ const HomePage = () => {
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                { title: 'Interactive focus', value: '92%', note: 'Higher visual emphasis on hero CTAs' },
-                { title: 'Motion timing', value: '0.8s', note: 'Smooth reveal pacing for sections' },
-                { title: 'UI depth', value: '12 layers', note: 'Glows, cards, image stacks, and overlays' },
-                { title: 'Shop feel', value: 'Studio', note: 'Designed to feel curated and premium' },
+                { title: 'Category coverage', value: '6+', note: 'Electronics, fashion, beauty, home, toys, and more' },
+                { title: 'Checkout flow', value: 'Fast', note: 'Cleaner shopping paths from product discovery to payment' },
+                { title: 'Daily value', value: 'Fresh deals', note: 'Trending offers and featured picks updated for shoppers' },
+                { title: 'Shop feel', value: 'Curated', note: 'Designed to feel modern, premium, and easy to browse' },
               ].map((item) => (
                 <div
                   key={item.title}
@@ -534,17 +534,17 @@ const HomePage = () => {
         >
           <p className="text-sm uppercase tracking-[0.32em] text-cyan-300">Why {siteName}</p>
           <h2 className="mt-3 font-['Space_Grotesk'] text-3xl font-bold text-white">
-            SEO-rich brand content that still feels useful for real shoppers.
+            E-commerce content that helps shoppers discover, compare, and buy with confidence.
           </h2>
           <div className="mt-5 grid gap-5 lg:grid-cols-3">
             <p className="text-sm leading-7 text-slate-300">
-              {siteName} is built for customers searching for online shopping in India across electronics, fashion, beauty, home decor, toys, and appliances, with clear product discovery and clean navigation.
+              {siteName} brings together electronics, fashion, beauty, home essentials, toys, and everyday lifestyle picks in one modern storefront built for easy browsing and faster product discovery.
             </p>
             <p className="text-sm leading-7 text-slate-300">
-              The home page highlights trending products, curated collections, secure checkout messaging, and daily deals so visitors and search engines both understand the value of the store.
+              Featured collections, trending deals, product-led sections, and clear shopping paths help customers move from inspiration to checkout without friction on desktop or mobile.
             </p>
             <p className="text-sm leading-7 text-slate-300">
-              Better typography, stronger section hierarchy, and more polished interface details make the website feel premium while supporting longer, keyword-relevant brand storytelling.
+              Trust-focused messaging around secure payments, delivery support, and curated value gives {siteName} a stronger e-commerce identity while keeping the experience polished and premium.
             </p>
           </div>
         </MotionDiv>
