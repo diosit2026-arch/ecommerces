@@ -1,21 +1,2245 @@
 [
-  {
-    "id": 1,
-    "name": "Fashion Product 1",
-    "category": "Fashion",
-    "brand": "Fashion",
-    "price": 0,
-    "originalPrice": 0,
-    "rating": 4,
-    "stock": 0,
-    "reviewsCount": 0,
-    "description": "",
-    "image": "",
-    "images": [],
-    "featureImages": [],
-    "isTrending": false,
-    "isDeal": false,
-    "sizes": [],
-    "measurements": {}
-  }
+    {
+        "id":  0,
+        "name":  "Men Running Shoes",
+        "category":  "Fashion",
+        "brand":  "BRUTON",
+        "price":  272,
+        "originalPrice":  368,
+        "rating":  3.6,
+        "stock":  50,
+        "reviewsCount":  533,
+        "description":  "Lightweight men\u0027s running shoes with breathable upper, cushioned sole, and multi-angle product gallery for everyday workouts and casual wear.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/f/t/6-rng-2cmb-560-wht-514-gry-6-bruton-white-grey-original-imahyrrapdn8xuqy.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/f/t/6-rng-2cmb-560-wht-514-gry-6-bruton-white-grey-original-imahyrrapdn8xuqy.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/j/r/y/6-rng-514-gry-40-bruton-grey-original-imahb5wfukvfguhg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/f/z/n/6-rng-514-gry-40-bruton-grey-original-imahb5wfefjgnwaw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/d/1/l/6-rng-514-gry-40-bruton-grey-original-imahb5wfeexcejb7.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/l/f/6/6-rng-514-gry-40-bruton-grey-original-imahb5wfxjhzatrt.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/q/f/t/6-rng-2cmb-560-wht-514-gry-6-bruton-white-grey-original-imahyrrapdn8xuqy.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/q/f/t/6-rng-2cmb-560-wht-514-gry-6-bruton-white-grey-original-imahyrrapdn8xuqy.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/q/f/t/6-rng-2cmb-560-wht-514-gry-6-bruton-white-grey-original-imahyrrapdn8xuqy.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/f/t/6-rng-2cmb-560-wht-514-gry-6-bruton-white-grey-original-imahyrrapdn8xuqy.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/j/r/y/6-rng-514-gry-40-bruton-grey-original-imahb5wfukvfguhg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/f/z/n/6-rng-514-gry-40-bruton-grey-original-imahb5wfefjgnwaw.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Running Shoes",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "BRUTON Trendy Sports Running Running Shoes For Men"
+                         },
+        "source":  "https://www.flipkart.com/bruton-trendy-sports-running-shoes-men/p/itm20130f6ebb65e?pid=SHOHAHHWAJGCCX3U"
+    },
+    {
+        "id":  0,
+        "name":  "Men Slide Slippers",
+        "category":  "Fashion",
+        "brand":  "WOODLAND",
+        "price":  789,
+        "originalPrice":  1066,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  2,
+        "description":  "Comfort-focused men\u0027s slide slippers with easy slip-on design, durable sole, and a real multi-image gallery for quick visual comparison.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/j/z/n/-original-imahjghzhmwjg3rq.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/j/z/n/-original-imahjghzhmwjg3rq.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/t/z/0/-original-imahjghzsyq4ffhb.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/c/b/f/-original-imahjghzjgkygmfe.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/l/x/n/-original-imahjghzw5cah7vs.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/5/q/6/-original-imahjghzb7rjman9.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/j/z/n/-original-imahjghzhmwjg3rq.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/j/z/n/-original-imahjghzhmwjg3rq.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/j/z/n/-original-imahjghzhmwjg3rq.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/j/z/n/-original-imahjghzhmwjg3rq.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/t/z/0/-original-imahjghzsyq4ffhb.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/c/b/f/-original-imahjghzjgkygmfe.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Slide Slippers",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "WOODLAND Men Slides"
+                         },
+        "source":  "https://www.flipkart.com/woodland-men-slides/p/itmb1059b0f6dc4e?pid=SFFHFPKKYDQ2F7KY"
+    },
+    {
+        "id":  0,
+        "name":  "Men Casual Loafers",
+        "category":  "Fashion",
+        "brand":  "AJANTA",
+        "price":  299,
+        "originalPrice":  404,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  2541,
+        "description":  "Casual waterproof loafers for men designed for daily wear, easy maintenance, and versatile styling from office commute to weekend use.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/0/k/9-fk0078-9-ajanta-brown-original-imahhg6ype9vfcuh.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/0/k/9-fk0078-9-ajanta-brown-original-imahhg6ype9vfcuh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/s/a/h/9-fk0078-9-ajanta-brown-original-imahhg6ysdynrssq.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/p/g/r/9-fk0078-9-ajanta-brown-original-imahhg6ybwgmzmfm.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/p/h/r/9-fk0078-9-ajanta-brown-original-imahhg6yxfsunrh9.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/6/r/n/9-fk0078-9-ajanta-brown-original-imahhg6yzjw9ntzp.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/k/0/k/9-fk0078-9-ajanta-brown-original-imahhg6ype9vfcuh.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/k/0/k/9-fk0078-9-ajanta-brown-original-imahhg6ype9vfcuh.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/k/0/k/9-fk0078-9-ajanta-brown-original-imahhg6ype9vfcuh.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/0/k/9-fk0078-9-ajanta-brown-original-imahhg6ype9vfcuh.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/s/a/h/9-fk0078-9-ajanta-brown-original-imahhg6ysdynrssq.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/p/g/r/9-fk0078-9-ajanta-brown-original-imahhg6ybwgmzmfm.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "7",
+                      "8",
+                      "9",
+                      "10"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Casual Loafers",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "AJANTA Casual PVC Waterproof Loafers For Men"
+                         },
+        "source":  "https://www.flipkart.com/ajanta-casual-pvc-waterproof-loafers-men/p/itm8794998d842bf?pid=SHOGHRUM33ZXCTRX"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels",
+        "category":  "Fashion",
+        "brand":  "TOSHINA SHOES KING",
+        "price":  393,
+        "originalPrice":  531,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  1323,
+        "description":  "Statement block heels for women with elevated styling, comfortable structure, and multiple real product images for a better pre-purchase view.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/h/r/6-nex-39-toshina-shoes-king-black-original-imahfyyq9dz5dzvz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/k/p/6-nex-39-toshina-shoes-king-black-original-imahfyyqrf6hq7sx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/g/g/c/6-nex-39-toshina-shoes-king-black-original-imahfyyqpme8qfyx.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=80"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/k/5/6-nex-39-toshina-shoes-king-black-original-imahfyyqwgcbzckw.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/h/r/6-nex-39-toshina-shoes-king-black-original-imahfyyq9dz5dzvz.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/k/p/6-nex-39-toshina-shoes-king-black-original-imahfyyqrf6hq7sx.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "TOSHINA SHOES KING Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/toshina-shoes-king-women-heels/p/itma370ec50e81d7?pid=SNDFH3V29AAZXTZM"
+    },
+    {
+        "id":  0,
+        "name":  "Women Slide Slippers",
+        "category":  "Fashion",
+        "brand":  "Trekzen",
+        "price":  153,
+        "originalPrice":  207,
+        "rating":  3.6,
+        "stock":  50,
+        "reviewsCount":  45,
+        "description":  "Everyday women\u0027s slide slippers with easy comfort, simple styling, and real gallery shots that help shoppers review the product from several angles.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/b/w/k/-original-imahjyssvnvhabwf.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/b/w/k/-original-imahjyssvnvhabwf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/a/d/o/-original-imahkycwwfrgfugs.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/m/p/x/-original-imahkycwbxzy7fms.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/h/i/n/-original-imahjyssmhjzvepm.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/g/s/m/-original-imahjynyrzgb4znz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/b/w/k/-original-imahjyssvnvhabwf.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/b/w/k/-original-imahjyssvnvhabwf.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/b/w/k/-original-imahjyssvnvhabwf.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/b/w/k/-original-imahjyssvnvhabwf.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/a/d/o/-original-imahkycwwfrgfugs.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/m/p/x/-original-imahkycwbxzy7fms.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Slide Slippers",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Trekzen Women Slides"
+                         },
+        "source":  "https://www.flipkart.com/trekzen-women-slides/p/itma23492f5a85ad?pid=SFFH7P42REFGWHUX"
+    },
+    {
+        "id":  0,
+        "name":  "Women Fashion Sneakers",
+        "category":  "Fashion",
+        "brand":  "Layasa",
+        "price":  401,
+        "originalPrice":  542,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  883,
+        "description":  "Fashion-forward women\u0027s sneakers with casual streetwear appeal, cushioned comfort, and a real multi-image gallery for style-led shopping.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/c/q/n/-original-imahg242hsrfeszz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/7/p/h/-original-imahg242bjjq9fn5.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1000/1340/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/r/a/w/-original-imahg242t4encxdm.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/c/q/n/-original-imahg242hsrfeszz.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/7/p/h/-original-imahg242bjjq9fn5.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Fashion Sneakers",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Layasa Casual Sneakers White Shoes For Girls And Sneakers For Women"
+                         },
+        "source":  "https://www.flipkart.com/layasa-casual-sneakers-white-shoes-girls-women/p/itmbe06b4d8e2e3d?pid=SHOGNFZYXD4NK27A"
+    },
+    {
+        "id":  0,
+        "name":  "Kids Sandals",
+        "category":  "Fashion",
+        "brand":  "HOOH",
+        "price":  224,
+        "originalPrice":  303,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  357,
+        "description":  "Kids sports sandals with secure velcro closure, lightweight comfort, and multiple real images to help parents review design and finish.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/o/p/b/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fezgg4vsy.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/z/z/0/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fhcqx8dns.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/0/w/2/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fvqbwpchk.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=80"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/z/e/s/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fzyqbw2t7.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/o/p/b/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fezgg4vsy.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/z/z/0/3c-hooh-sandals-hooh-now-comfort-in-fashion-original-imahkc4fhcqx8dns.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5"
+                  ],
+        "measurements":  {
+                             "audience":  "Kids",
+                             "type":  "Kids Sandals",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "HOOH - Now comfort in fashion Boys Velcro Sports Sandals"
+                         },
+        "source":  "https://www.flipkart.com/hooh-now-comfort-fashion-boys-velcro-sports-sandals/p/itm63b4e8670b2c9?pid=KSAH2A6EYGPHHSXT"
+    },
+    {
+        "id":  0,
+        "name":  "Kids Sports Shoes",
+        "category":  "Fashion",
+        "brand":  "ACTION",
+        "price":  1123,
+        "originalPrice":  1517,
+        "rating":  4.4,
+        "stock":  50,
+        "reviewsCount":  88,
+        "description":  "Durable kids sports shoes built for active play, school routines, and all-day comfort, backed by a real gallery of product angles.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/y/i/z/13c-master-603-action-original-imagzxhhveg5xfem.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/y/i/z/13c-master-603-action-original-imagzxhhveg5xfem.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/q/3/z/13c-master-603-action-original-imagzxhhg4e8jehw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/e/0/2/13c-master-603-action-original-imagzxhhjxwvxau6.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/d/k/b/13c-master-603-action-original-imagzxhhmxtm23zf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/m/l/b/13c-master-603-action-original-imagzxhhmebed6mv.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-shoe/y/i/z/13c-master-603-action-original-imagzxhhveg5xfem.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/kids-shoe/y/i/z/13c-master-603-action-original-imagzxhhveg5xfem.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/kids-shoe/y/i/z/13c-master-603-action-original-imagzxhhveg5xfem.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/y/i/z/13c-master-603-action-original-imagzxhhveg5xfem.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/q/3/z/13c-master-603-action-original-imagzxhhg4e8jehw.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/e/0/2/13c-master-603-action-original-imagzxhhjxwvxau6.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5"
+                  ],
+        "measurements":  {
+                             "audience":  "Kids",
+                             "type":  "Kids Sports Shoes",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "action Athleo MASTER-603 Durable Comfortable Breathable Lighweight Sports Lace-Up Boys Lace Running Shoes"
+                         },
+        "source":  "https://www.flipkart.com/action-athleo-master-603-durable-comfortable-breathable-lighweight-sports-lace-up-boys-lace-running-shoes/p/itm73114833180cd?pid=KSSGZXHHZEABMZ6R"
+    },
+    {
+        "id":  0,
+        "name":  "Kids Clogs",
+        "category":  "Fashion",
+        "brand":  "TRZ",
+        "price":  247,
+        "originalPrice":  334,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  84,
+        "description":  "Easy-wear kids clogs with sling-back support, playful comfort, and a real multi-image gallery for quick parent-friendly selection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/k/b/5/11c-crx-11-asron-original-imah5bt8hu2k3cve.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/k/b/5/11c-crx-11-asron-original-imah5bt8hu2k3cve.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/1/b/8/-original-imahjzwfmdpsavhm.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/h/r/m/11c-crx-11-asron-original-imah5bt85yruw9a3.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/x/b/o/11c-crx-11-trz-original-imah8a9qyuzwzrzh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/d/g/7/11c-crx-11-trz-original-imah8a9q6gyzzzfk.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-sandal/k/b/5/11c-crx-11-asron-original-imah5bt8hu2k3cve.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/kids-sandal/k/b/5/11c-crx-11-asron-original-imah5bt8hu2k3cve.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/kids-sandal/k/b/5/11c-crx-11-asron-original-imah5bt8hu2k3cve.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/k/b/5/11c-crx-11-asron-original-imah5bt8hu2k3cve.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/1/b/8/-original-imahjzwfmdpsavhm.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/h/r/m/11c-crx-11-asron-original-imah5bt85yruw9a3.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5"
+                  ],
+        "measurements":  {
+                             "audience":  "Kids",
+                             "type":  "Kids Clogs",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "TRZ Boys Sling Back Clogs"
+                         },
+        "source":  "https://www.flipkart.com/trz-boys-sling-back-clogs/p/itm2dfb58171f8b2?pid=KSAGXZKJFCMDZZZE"
+    },
+    {
+        "id":  0,
+        "name":  "Men Running Shoes Pro",
+        "category":  "Fashion",
+        "brand":  "BRUTON",
+        "price":  401,
+        "originalPrice":  542,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  2885,
+        "description":  "Sport-focused men\u0027s running shoes with breathable support, cushioned comfort, and real multi-angle images for value-driven footwear shopping.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/i/l/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cmwhphfaw.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/i/l/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cmwhphfaw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/6/4/u/8-rng-eva-740-wht-blk-8-bruton-white-black-original-imahjn6cagcnrz2j.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/2/f/q/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cgg9dn8ku.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/c/b/e/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cf29fz3ra.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/x/k/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6chqfgbgth.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/k/i/l/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cmwhphfaw.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/k/i/l/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cmwhphfaw.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/k/i/l/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cmwhphfaw.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/i/l/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cmwhphfaw.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/6/4/u/8-rng-eva-740-wht-blk-8-bruton-white-black-original-imahjn6cagcnrz2j.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/2/f/q/10-rng-eva-740-wht-blk-10-bruton-white-black-original-imahjn6cgg9dn8ku.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Running Shoes Pro",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "BRUTON EVA Lite Sport Shoes Running Shoes For Men"
+                         },
+        "source":  "https://www.flipkart.com/bruton-eva-lite-sport-shoes-running-men/p/itmc708b7b639208?pid=SHOHBYCAGRYMQ5MM"
+    },
+    {
+        "id":  0,
+        "name":  "Men Slides Premium",
+        "category":  "Fashion",
+        "brand":  "WOODLAND",
+        "price":  949,
+        "originalPrice":  1282,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  4,
+        "description":  "Premium men\u0027s slides with sturdier build, richer finish, and a real gallery that gives shoppers a better product-angle view before checkout.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/x/z/v/9-off-6662024-woodland-dbrown-original-imahkkpcyt9qztzg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/x/z/v/9-off-6662024-woodland-dbrown-original-imahkkpcyt9qztzg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/8/p/y/9-off-6662024-woodland-dbrown-original-imahkkpcx8ffh3cq.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/l/u/2/9-off-6662024-woodland-dbrown-original-imahkkpchze4m5cj.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/k/x/w/9-off-6662024-woodland-dbrown-original-imahkkpczvwvspsd.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/g/u/9/9-off-6662024-woodland-dbrown-original-imahkkpcnb2uyq98.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/x/z/v/9-off-6662024-woodland-dbrown-original-imahkkpcyt9qztzg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/x/z/v/9-off-6662024-woodland-dbrown-original-imahkkpcyt9qztzg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/x/z/v/9-off-6662024-woodland-dbrown-original-imahkkpcyt9qztzg.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/x/z/v/9-off-6662024-woodland-dbrown-original-imahkkpcyt9qztzg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/8/p/y/9-off-6662024-woodland-dbrown-original-imahkkpcx8ffh3cq.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/l/u/2/9-off-6662024-woodland-dbrown-original-imahkkpchze4m5cj.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Slides Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "WOODLAND Men Slides"
+                         },
+        "source":  "https://www.flipkart.com/woodland-men-slides/p/itm027d670a551d7?pid=SFFHJ8T9VADTM6VW"
+    },
+    {
+        "id":  0,
+        "name":  "Men Slide Slippers Sport",
+        "category":  "Fashion",
+        "brand":  "RED TAPE",
+        "price":  569,
+        "originalPrice":  769,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  366,
+        "description":  "Sporty men\u0027s slide slippers with branded styling, cushioned comfort, and real multiple images for a more reliable shopping experience.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/y/q/i/9-rds187-redtape-beige-olive-original-imagy3wbthmxwfta.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/y/q/i/9-rds187-redtape-beige-olive-original-imagy3wbthmxwfta.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/i/w/x/7-rds187-red-tape-beige-olive-original-imahhdjcjzzcshxg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/k/4/g/9-rds187-redtape-beige-olive-original-imagy3wbvcyn8mh6.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/w/d/s/9-rds187-redtape-beige-olive-original-imagy3wbuxudkdqj.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/5/g/9-rds187-redtape-beige-olive-original-imagy3wbkrpenmb5.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/y/q/i/9-rds187-redtape-beige-olive-original-imagy3wbthmxwfta.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/y/q/i/9-rds187-redtape-beige-olive-original-imagy3wbthmxwfta.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/y/q/i/9-rds187-redtape-beige-olive-original-imagy3wbthmxwfta.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/y/q/i/9-rds187-redtape-beige-olive-original-imagy3wbthmxwfta.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/i/w/x/7-rds187-red-tape-beige-olive-original-imahhdjcjzzcshxg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/k/4/g/9-rds187-redtape-beige-olive-original-imagy3wbvcyn8mh6.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Slide Slippers Sport",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "RED TAPE Men Slides"
+                         },
+        "source":  "https://www.flipkart.com/red-tape-men-slides/p/itm5af347acf09c5?pid=SFFH2FJHDHHAEB9K"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels Classic",
+        "category":  "Fashion",
+        "brand":  "IndiForce",
+        "price":  262,
+        "originalPrice":  354,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  738,
+        "description":  "Affordable women\u0027s block heels with a clean partywear silhouette, comfortable step-up shape, and real gallery images across multiple angles.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/u/x/-original-imahftqtcunhszmh.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/u/x/-original-imahftqtcunhszmh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/k/f/c/-original-imahftqtfyrdpzxz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/m/9/-original-imahftqtfun9he7x.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/7/h/-original-imahftqtgh6ymqhc.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/b/u/j/-original-imahftqtw39hrrzz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/n/u/x/-original-imahftqtcunhszmh.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/n/u/x/-original-imahftqtcunhszmh.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/n/u/x/-original-imahftqtcunhszmh.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/u/x/-original-imahftqtcunhszmh.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/k/f/c/-original-imahftqtfyrdpzxz.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/m/9/-original-imahftqtfun9he7x.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels Classic",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "IndiForce Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/indiforce-women-heels/p/itm64669672c75d4?pid=SNDFPCYHS5Z6P39Y"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels Premium",
+        "category":  "Fashion",
+        "brand":  "SIMPLEX",
+        "price":  648,
+        "originalPrice":  875,
+        "rating":  4.2,
+        "stock":  50,
+        "reviewsCount":  74,
+        "description":  "Premium women\u0027s heels with dressier finish, sharper silhouette, and real gallery photos that make comparison easier for shoppers.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/o/q/5-jm-805-black-5-simplex-black-original-imahkvsxzcqhvcdn.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/o/q/5-jm-805-black-5-simplex-black-original-imahkvsxzcqhvcdn.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/b/5/5-jm-805-black-5-simplex-black-original-imahkvsxjzaj3dah.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/q/i/m/5-jm-805-black-5-simplex-black-original-imahkvsxh34gcxgs.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/l/w/5-jm-805-black-5-simplex-black-original-imahkvsxnyuy8hzz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/p/j/4/5-jm-805-black-5-simplex-black-original-imahkvsxzqm5f7b8.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/c/o/q/5-jm-805-black-5-simplex-black-original-imahkvsxzcqhvcdn.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/c/o/q/5-jm-805-black-5-simplex-black-original-imahkvsxzcqhvcdn.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/c/o/q/5-jm-805-black-5-simplex-black-original-imahkvsxzcqhvcdn.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/o/q/5-jm-805-black-5-simplex-black-original-imahkvsxzcqhvcdn.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/b/5/5-jm-805-black-5-simplex-black-original-imahkvsxjzaj3dah.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/q/i/m/5-jm-805-black-5-simplex-black-original-imahkvsxh34gcxgs.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "SIMPLEX Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/simplex-women-heels/p/itmc09ba26bc4af0?pid=SNDGYDX3JQGVAQX3"
+    },
+    {
+        "id":  0,
+        "name":  "Women Slide Slippers Comfort",
+        "category":  "Fashion",
+        "brand":  "Shozie",
+        "price":  256,
+        "originalPrice":  346,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  123,
+        "description":  "Comfort-led women\u0027s slides with a softer casual look, stronger review signal, and real product images that help quick visual shopping.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/e/n/n/5-9339-purple-shozie-beige-original-imahgqynekgvhe8d.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/e/n/n/5-9339-purple-shozie-beige-original-imahgqynekgvhe8d.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/y/z/5-9339-purple-shozie-beige-original-imahgqyzqbybt3hy.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/x/c/5-9339-purple-shozie-beige-original-imahgqynug6jectt.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/1/k/p/4-9339-prpl-kds-deals4you-original-imahg2jv52jgxkzg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/q/g/h/4-9339-prpl-kds-deals4you-original-imahg2jvjedmccgs.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/e/n/n/5-9339-purple-shozie-beige-original-imahgqynekgvhe8d.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/e/n/n/5-9339-purple-shozie-beige-original-imahgqynekgvhe8d.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/e/n/n/5-9339-purple-shozie-beige-original-imahgqynekgvhe8d.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/e/n/n/5-9339-purple-shozie-beige-original-imahgqynekgvhe8d.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/y/z/5-9339-purple-shozie-beige-original-imahgqyzqbybt3hy.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/x/c/5-9339-purple-shozie-beige-original-imahgqynug6jectt.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Slide Slippers Comfort",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Shozie Women Slides"
+                         },
+        "source":  "https://www.flipkart.com/shozie-women-slides/p/itm829022b4dcd3a?pid=SFFHFE2PKNZR5XA3"
+    },
+    {
+        "id":  0,
+        "name":  "Women Fashion Sneakers Premium",
+        "category":  "Fashion",
+        "brand":  "PUMA",
+        "price":  1800,
+        "originalPrice":  2430,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  395,
+        "description":  "Premium women\u0027s sneakers with stronger brand appeal, multiple real images, and a higher-end option for shoppers browsing upscale casual footwear.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/d/4/g/-original-imahgvegvcqu86ah.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/d/4/g/-original-imahgvegvcqu86ah.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/c/w/-original-imahgvegmhmptg4z.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/g/k/u/-original-imahgvegmtgp9uwf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/m/a/-original-imahgveghvhsjrzh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/n/y/7/-original-imahgvegmjrwt3kg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/d/4/g/-original-imahgvegvcqu86ah.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/d/4/g/-original-imahgvegvcqu86ah.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/d/4/g/-original-imahgvegvcqu86ah.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/d/4/g/-original-imahgvegvcqu86ah.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/c/w/-original-imahgvegmhmptg4z.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/g/k/u/-original-imahgvegmtgp9uwf.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Fashion Sneakers Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "PUMA Puma Smashic Wmn Casuals For Women"
+                         },
+        "source":  "https://www.flipkart.com/puma-smashic-wmn-casuals-women/p/itm5aedfabbe0ded?pid=SHOGHKSBZEAK5ZZR"
+    },
+    {
+        "id":  0,
+        "name":  "Women Fashion Sneakers Pink",
+        "category":  "Fashion",
+        "brand":  "EZDEZARIO",
+        "price":  383,
+        "originalPrice":  518,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  38,
+        "description":  "Budget-friendly women\u0027s fashion sneakers with a colorful casual look, real gallery shots, and accessible pricing for style-led shopping.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/s/o/k/3-love-3-ezdezario-pink-original-imahkf5q8gfq8gxs.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/s/o/k/3-love-3-ezdezario-pink-original-imahkf5q8gfq8gxs.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/3/s/5-love1-5-ezdezario-pink-original-imahkymsmfmhnmqh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/d/d/3-love-3-ezdezario-pink-original-imahkf5qhbbhkguh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/w/x/7/3-love-3-ezdezario-pink-original-imahkf5qg5guhf9h.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/w/s/e/3-love-3-ezdezario-pink-original-imahkf5q8d3ybemp.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/s/o/k/3-love-3-ezdezario-pink-original-imahkf5q8gfq8gxs.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/s/o/k/3-love-3-ezdezario-pink-original-imahkf5q8gfq8gxs.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/s/o/k/3-love-3-ezdezario-pink-original-imahkf5q8gfq8gxs.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/s/o/k/3-love-3-ezdezario-pink-original-imahkf5q8gfq8gxs.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/3/s/5-love1-5-ezdezario-pink-original-imahkymsmfmhnmqh.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/d/d/3-love-3-ezdezario-pink-original-imahkf5qhbbhkguh.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Fashion Sneakers Pink",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "EZDEZARIO Sneakers For Women"
+                         },
+        "source":  "https://www.flipkart.com/ezdezario-sneakers-women/p/itmc1f578b89cad8?pid=SHOHJHSXATKZWSUZ"
+    },
+    {
+        "id":  0,
+        "name":  "Kids Sports Shoes Campus",
+        "category":  "Fashion",
+        "brand":  "CAMPUS",
+        "price":  1149,
+        "originalPrice":  1552,
+        "rating":  4.8,
+        "stock":  50,
+        "reviewsCount":  18,
+        "description":  "Higher-rated kids sports shoes with durable lace-up comfort, multiple real images, and a stronger premium option for active everyday wear.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/7/u/n/4-22c-190-campus-original-imahgpk53gv75tqk.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/7/u/n/4-22c-190-campus-original-imahgpk53gv75tqk.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/s/t/e/4-22c-190-campus-original-imahgpk5kk63xmr6.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/z/j/m/2-22c-190-campus-original-imahgpk545emdv9b.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/8/x/i/2-22c-190-campus-original-imahgpk5yaey3y5j.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/m/z/s/4-22c-190-campus-original-imahgpk5y2fpgsdp.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-shoe/7/u/n/4-22c-190-campus-original-imahgpk53gv75tqk.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/kids-shoe/7/u/n/4-22c-190-campus-original-imahgpk53gv75tqk.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/kids-shoe/7/u/n/4-22c-190-campus-original-imahgpk53gv75tqk.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/7/u/n/4-22c-190-campus-original-imahgpk53gv75tqk.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/s/t/e/4-22c-190-campus-original-imahgpk5kk63xmr6.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/z/j/m/2-22c-190-campus-original-imahgpk545emdv9b.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5"
+                  ],
+        "measurements":  {
+                             "audience":  "Kids",
+                             "type":  "Kids Sports Shoes Campus",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "CAMPUS Boys \u0026 Girls Lace Running Shoes"
+                         },
+        "source":  "https://www.flipkart.com/campus-boys-girls-lace-running-shoes/p/itm90971f59093e8?pid=KSSHGPK6ZTPMJYBH"
+    },
+    {
+        "id":  0,
+        "name":  "Kids Sports Shoes Active",
+        "category":  "Fashion",
+        "brand":  "asian",
+        "price":  791,
+        "originalPrice":  1068,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  43,
+        "description":  "Versatile kids running shoes with sporty styling, multiple real gallery images, and a balanced mid-range option for active daily use.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/f/x/f/4-adventure-52-asian-original-imahfpjdcstxq4vp.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/f/x/f/4-adventure-52-asian-original-imahfpjdcstxq4vp.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-sandal/8/1/2/-original-imahd2zbvbqfwxtg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/q/e/n/4-adventure-52-asian-original-imahfpjdhymzpfda.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/e/b/u/4-adventure-52-asian-original-imahfpjdnb9vsnhg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/g/3/j/4-adventure-52-asian-original-imahfpjdyfpfz4tx.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-shoe/f/x/f/4-adventure-52-asian-original-imahfpjdcstxq4vp.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/kids-shoe/f/x/f/4-adventure-52-asian-original-imahfpjdcstxq4vp.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/kids-shoe/f/x/f/4-adventure-52-asian-original-imahfpjdcstxq4vp.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/f/x/f/4-adventure-52-asian-original-imahfpjdcstxq4vp.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/q/e/n/4-adventure-52-asian-original-imahfpjdhymzpfda.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/kids-shoe/e/b/u/4-adventure-52-asian-original-imahfpjdnb9vsnhg.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5"
+                  ],
+        "measurements":  {
+                             "audience":  "Kids",
+                             "type":  "Kids Sports Shoes Active",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "asian Boys \u0026 Girls Lace Running Shoes"
+                         },
+        "source":  "https://www.flipkart.com/asian-boys-girls-lace-running-shoes/p/itma30dc31650354?pid=KSSHFP5HVKZE6YPS"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels Everyday",
+        "category":  "Fashion",
+        "brand":  "Heenaplus",
+        "price":  267,
+        "originalPrice":  361,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Everyday block heels for women with a low-to-mid price point, wearable styling, and real gallery images for easier shopping confidence.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/v/e/5-h-2-heenaplus-black-original-imahba3qhhsf6fxf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/g/d/t/5-h-2-heenaplus-black-original-imahba3qenhcyjxe.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/y/2/5-h-2-heenaplus-black-original-imahba3qafnjtmwp.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=80"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/7/v/n/5-h-2-heenaplus-black-original-imahba3qafwrxmjs.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/v/e/5-h-2-heenaplus-black-original-imahba3qhhsf6fxf.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/g/d/t/5-h-2-heenaplus-black-original-imahba3qenhcyjxe.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels Everyday",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Heenaplus Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/heenaplus-women-heels/p/itmdafebf57fd523?pid=SNDHBA3PFAFQHFJH"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels Budget",
+        "category":  "Fashion",
+        "brand":  "Beacon",
+        "price":  255,
+        "originalPrice":  345,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Budget-friendly women heels with a lower entry price, party-ready styling, and real product images across multiple angles.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/o/9/7-jit-153-beacon-black-original-imah6wsyhfycfvnh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/1/x/u/7-jit-153-beacon-black-original-imah6wsy54fgbmfg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/z/o/7-jit-153-beacon-black-original-imah6wsyvhbycnqd.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=80"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/s/d/7-jit-153-beacon-black-original-imah6wsy9vz7ffrs.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/o/9/7-jit-153-beacon-black-original-imah6wsyhfycfvnh.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/1/x/u/7-jit-153-beacon-black-original-imah6wsy54fgbmfg.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels Budget",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Beacon Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/beacon-women-heels/p/itm5282a8df655ac?pid=SNDH6WSSZHSQPWVG"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels Party",
+        "category":  "Fashion",
+        "brand":  "Picktoes",
+        "price":  401,
+        "originalPrice":  542,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Party-ready women heels in a comfortable mid-price range with real multi-image gallery support for a more complete product view.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/c/y/4-pt-gd602-picktoes-golden-original-imah6nw5ghfmmhfh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/e/u/4-pt-gd602-picktoes-golden-original-imah6nw5fwv4zhuz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/f/e/4-pt-gd602-picktoes-golden-original-imah6nw5zkrum2wt.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=80"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/n/y/4-pt-gd602-picktoes-golden-original-imah6nw5gq2zkpge.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/c/y/4-pt-gd602-picktoes-golden-original-imah6nw5ghfmmhfh.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/e/u/4-pt-gd602-picktoes-golden-original-imah6nw5fwv4zhuz.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels Party",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Picktoes PT-GD602 Lightweight Comfort Summer Trendy Premium Stylish Party disigin Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/picktoes-pt-gd602-lightweight-comfort-summer-trendy-premium-stylish-party-disigin-women-heels/p/itm76d2736112afd?pid=SNDH6NXEHYWCGGFG"
+    },
+    {
+        "id":  0,
+        "name":  "Women Block Heels Gloss",
+        "category":  "Fashion",
+        "brand":  "TOSHINA SHOES KING",
+        "price":  374,
+        "originalPrice":  505,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Gloss-finish women block heels with a mid-range price point, extra gallery angles, and a dressier style option for the heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/v/x/w/6-414-toshina-shoes-king-black-original-imahfyytyhbbzfqe.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/b/g/6-414-toshina-shoes-king-black-original-imahfyytb5q9h3gg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/9/k/c/6-414-toshina-shoes-king-black-original-imahfyytadhzbd2v.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=80"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/t/9/6-414-toshina-shoes-king-black-original-imahfyythqzfkgzg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/v/x/w/6-414-toshina-shoes-king-black-original-imahfyytyhbbzfqe.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/b/g/6-414-toshina-shoes-king-black-original-imahfyytb5q9h3gg.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Block Heels Gloss",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "TOSHINA SHOES KING Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/toshina-shoes-king-women-heels/p/itmfcrqnhr8rt7d2?pid=SNDFCRY9CGQHQBYF"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Elegance",
+        "category":  "Fashion",
+        "brand":  "Picson",
+        "price":  537,
+        "originalPrice":  725,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Elegant women heels with secure ankle support, real gallery images, and a polished mid-range option for dressier occasions.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/s/k/4-pc-870-picson-black-original-imahk6cxqvfvbdr7.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/s/k/4-pc-870-picson-black-original-imahk6cxqvfvbdr7.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/x/w/4-pc-870-picson-black-original-imahk6cx8sypwkrn.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/k/t/y/4-pc-870-picson-black-original-imahk6cxpumqke5u.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/0/x/i/4-pc-870-picson-black-original-imahk6cx7qkgnqkc.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/e/f/a/4-pc-870-picson-black-original-imahk6cxbnbxnrpv.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/o/s/k/4-pc-870-picson-black-original-imahk6cxqvfvbdr7.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/o/s/k/4-pc-870-picson-black-original-imahk6cxqvfvbdr7.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/o/s/k/4-pc-870-picson-black-original-imahk6cxqvfvbdr7.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/s/k/4-pc-870-picson-black-original-imahk6cxqvfvbdr7.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/x/w/4-pc-870-picson-black-original-imahk6cx8sypwkrn.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/k/t/y/4-pc-870-picson-black-original-imahk6cxpumqke5u.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Elegance",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Picson Block Heels with Secure Ankle Strap | Premium Comfort and Everyday Elegance Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/picson-block-heels-secure-ankle-strap-premium-comfort-everyday-elegance-women-heels/p/itm102497f132388?pid=SNDHHS9GYH7H5A6C"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Statement",
+        "category":  "Fashion",
+        "brand":  "KIVEFASHIONS",
+        "price":  583,
+        "originalPrice":  788,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Statement women heels with a modern silhouette, real multiple images, and a strong mid-priced option in the heels lineup.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/2/f/7-kf-501-kivefashions-black-original-imahg5tyjzcxvhmw.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/2/f/7-kf-501-kivefashions-black-original-imahg5tyjzcxvhmw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/o/m/7-kf-501-kivefashions-black-original-imahg5tytpkyutg4.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/r/f/7-kf-501-kivefashions-black-original-imahg5tybvwvj8t2.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/y/c/v/7-kf-501-kivefashions-black-original-imahg5tyr2caehh3.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/3/e/o/7-kf-501-kivefashions-black-original-imahg5ty4fa4qgaa.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/f/2/f/7-kf-501-kivefashions-black-original-imahg5tyjzcxvhmw.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/f/2/f/7-kf-501-kivefashions-black-original-imahg5tyjzcxvhmw.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/f/2/f/7-kf-501-kivefashions-black-original-imahg5tyjzcxvhmw.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/2/f/7-kf-501-kivefashions-black-original-imahg5tyjzcxvhmw.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/o/m/7-kf-501-kivefashions-black-original-imahg5tytpkyutg4.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/r/f/7-kf-501-kivefashions-black-original-imahg5tybvwvj8t2.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Statement",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "KIVEFASHIONS Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/kivefashions-women-heels/p/itm3c34488cd635e?pid=SNDH7MUNVQGS9H4P"
+    },
+    {
+        "id":  0,
+        "name":  "Women Slippers Orthopedic",
+        "category":  "Fashion",
+        "brand":  "DUOSOFT",
+        "price":  190,
+        "originalPrice":  257,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Soft orthopedic slippers for women with supportive comfort, real gallery shots, and strong everyday value.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/x/w/5-xt-2-duosoft-purple-original-imah7zvhh8cgabzx.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/x/w/5-xt-2-duosoft-purple-original-imah7zvhh8cgabzx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/w/y/z/5-xt-2-duosoft-purple-original-imah7zvhpfe7t4kv.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/e/j/z/5-xt-2-duosoft-purple-original-imah7zvhjzjw9mmt.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/n/f/8/5-xt-2-duosoft-purple-original-imah7zvhhzzkthbe.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/x/w/u/5-xt-2-duosoft-purple-original-imah7zvhkgu6zmm8.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/s/x/w/5-xt-2-duosoft-purple-original-imah7zvhh8cgabzx.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/s/x/w/5-xt-2-duosoft-purple-original-imah7zvhh8cgabzx.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/s/x/w/5-xt-2-duosoft-purple-original-imah7zvhh8cgabzx.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/x/w/5-xt-2-duosoft-purple-original-imah7zvhh8cgabzx.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/w/y/z/5-xt-2-duosoft-purple-original-imah7zvhpfe7t4kv.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/e/j/z/5-xt-2-duosoft-purple-original-imah7zvhjzjw9mmt.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Slippers Orthopedic",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "DUOSOFT Women Super Soft|Orthopedic|Lightweight|Diabetic|Antiskid Slippers"
+                         },
+        "source":  "https://www.flipkart.com/duosoft-women-super-soft-orthopedic-lightweight-diabetic-antiskid-slippers/p/itm9c9e72f8bb19a?pid=SFFH9QG2JKHRYKRQ"
+    },
+    {
+        "id":  0,
+        "name":  "Women Slippers Everyday",
+        "category":  "Fashion",
+        "brand":  "DUOSOFT",
+        "price":  170,
+        "originalPrice":  230,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Everyday soft slippers for women with budget-friendly comfort and real multi-angle product images.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/f/r/5-duo-1-duosoft-black-original-imah8xvj2vhkgtm5.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/f/r/5-duo-1-duosoft-black-original-imah8xvj2vhkgtm5.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/v/u/z/5-duo-1-duosoft-black-original-imah8xvjxyyvjffk.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/r/a/o/5-duo-1-duosoft-black-original-imah8xvjyvjapnrq.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/k/n/o/5-duo-1-duosoft-black-original-imah8xvjenqygkfz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/c/c/0/5-duo-1-duosoft-black-original-imah8xvjzya4vra5.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/s/f/r/5-duo-1-duosoft-black-original-imah8xvj2vhkgtm5.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/s/f/r/5-duo-1-duosoft-black-original-imah8xvj2vhkgtm5.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/s/f/r/5-duo-1-duosoft-black-original-imah8xvj2vhkgtm5.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/f/r/5-duo-1-duosoft-black-original-imah8xvj2vhkgtm5.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/v/u/z/5-duo-1-duosoft-black-original-imah8xvjxyyvjffk.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/r/a/o/5-duo-1-duosoft-black-original-imah8xvjyvjapnrq.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Slippers Everyday",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "DUOSOFT Women Slippers"
+                         },
+        "source":  "https://www.flipkart.com/duosoft-women-slippers/p/itm4179c63d9d2c8?pid=SFFH9QFYAQ6CHB9Z"
+    },
+    {
+        "id":  0,
+        "name":  "Women Slippers Red Tape",
+        "category":  "Fashion",
+        "brand":  "RED TAPE",
+        "price":  379,
+        "originalPrice":  512,
+        "rating":  4.2,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Branded women flip flops with better finish, stronger rating, and real product images for a more premium slippers choice.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/o/k/u/4-rsl044-red-tape-rose-gold-original-imahgk2whesu9rxe.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/o/k/u/4-rsl044-red-tape-rose-gold-original-imahgk2whesu9rxe.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/v/0/c/4-rsl044-red-tape-rose-gold-original-imahgk2wnfwznzpk.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/a/h/4-rsl044-red-tape-rose-gold-original-imahgk2wkrcqxhyg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/n/r/x/4-rsl044-red-tape-rose-gold-original-imahgk2wwnmn5sfp.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/l/x/l/4-rsl044-red-tape-rose-gold-original-imahgk2wh4kaefk3.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/o/k/u/4-rsl044-red-tape-rose-gold-original-imahgk2whesu9rxe.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/o/k/u/4-rsl044-red-tape-rose-gold-original-imahgk2whesu9rxe.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/o/k/u/4-rsl044-red-tape-rose-gold-original-imahgk2whesu9rxe.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/o/k/u/4-rsl044-red-tape-rose-gold-original-imahgk2whesu9rxe.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/v/0/c/4-rsl044-red-tape-rose-gold-original-imahgk2wnfwznzpk.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/a/h/4-rsl044-red-tape-rose-gold-original-imahgk2wkrcqxhyg.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Slippers Red Tape",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "RED TAPE Women Flip Flops"
+                         },
+        "source":  "https://www.flipkart.com/red-tape-women-flip-flops/p/itm0adf2b8d26320?pid=SFFGZZ32X8ATXR8Z"
+    },
+    {
+        "id":  0,
+        "name":  "Women Casual Shoes Sport",
+        "category":  "Fashion",
+        "brand":  "Vokline",
+        "price":  263,
+        "originalPrice":  356,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Budget sport-style shoes for women with everyday comfort, active styling, and real gallery images.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/9/p/a/4-vk-rn-111-vokline-black-original-imah5hn4wtqumqfg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/9/p/a/4-vk-rn-111-vokline-black-original-imah5hn4wtqumqfg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/a/8/f/4-vk-rn-111-vokline-black-original-imah5hn4z9kyh4wk.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/0/r/f/4-vk-rn-111-vokline-black-original-imah5hn4dyewzwxt.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/z/h/w/4-vk-rn-111-vokline-black-original-imah5hn4kkgtjuyz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/k/f/x/4-vk-rn-111-vokline-black-original-imah5hn4tzhkczuz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/9/p/a/4-vk-rn-111-vokline-black-original-imah5hn4wtqumqfg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/9/p/a/4-vk-rn-111-vokline-black-original-imah5hn4wtqumqfg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/9/p/a/4-vk-rn-111-vokline-black-original-imah5hn4wtqumqfg.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/9/p/a/4-vk-rn-111-vokline-black-original-imah5hn4wtqumqfg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/a/8/f/4-vk-rn-111-vokline-black-original-imah5hn4z9kyh4wk.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/0/r/f/4-vk-rn-111-vokline-black-original-imah5hn4dyewzwxt.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Casual Shoes Sport",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Vokline Vokline Women sports shoes,Running shoes,Trekking Shoes,gym shoes for women Outdoors For Women"
+                         },
+        "source":  "https://www.flipkart.com/vokline-women-sports-shoes-running-trekking-gym-outdoors-women/p/itm3b55d3631b1a1?pid=SHOGY9FM7GH3SYJM"
+    },
+    {
+        "id":  0,
+        "name":  "Women Casual Shoes Trendy",
+        "category":  "Fashion",
+        "brand":  "COOPERWINGS",
+        "price":  322,
+        "originalPrice":  435,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Trendy women sneakers with a clean casual look, real images, and an accessible low-mid price point.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/r/d/p/6-sneaker-01-cooperwings-white-original-imahh3y8rbnqarfk.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/r/d/p/6-sneaker-01-cooperwings-white-original-imahh3y8rbnqarfk.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/m/f/6-sneaker-01-cooperwings-white-original-imahh3y88uukpxkp.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/f/9/d/6-sneaker-01-cooperwings-white-original-imahh3y8y3nszdph.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/u/x/d/6-sneaker-01-cooperwings-white-original-imahh3y8ya6jv6ky.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/3/g/6-sneaker-01-cooperwings-white-original-imahh3y8tdb5gqqr.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/r/d/p/6-sneaker-01-cooperwings-white-original-imahh3y8rbnqarfk.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/r/d/p/6-sneaker-01-cooperwings-white-original-imahh3y8rbnqarfk.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/r/d/p/6-sneaker-01-cooperwings-white-original-imahh3y8rbnqarfk.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/r/d/p/6-sneaker-01-cooperwings-white-original-imahh3y8rbnqarfk.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/m/f/6-sneaker-01-cooperwings-white-original-imahh3y88uukpxkp.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/f/9/d/6-sneaker-01-cooperwings-white-original-imahh3y8y3nszdph.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Casual Shoes Trendy",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "COOPERWINGS Sneakers For Women"
+                         },
+        "source":  "https://www.flipkart.com/cooperwings-sneakers-women/p/itm8f7c8c3d82401?pid=SHOH8PTEUGSYX8GU"
+    },
+    {
+        "id":  0,
+        "name":  "Men Slippers Orthopedic",
+        "category":  "Fashion",
+        "brand":  "DOCTOR EXTRA SOFT",
+        "price":  698,
+        "originalPrice":  942,
+        "rating":  4.4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Orthopedic slippers for men with extra cushioning, arch support, and real gallery images for a comfort-first option.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/e/b/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzqbf6qhg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/e/b/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzqbf6qhg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/f/f/2/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3whhvjse2u.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/t/l/e/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzrbdzt6x.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/r/p/v/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wpyzwcc4s.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/u/e/q/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wtkgzyhtv.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/q/e/b/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzqbf6qhg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/q/e/b/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzqbf6qhg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/q/e/b/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzqbf6qhg.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/e/b/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzqbf6qhg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/f/f/2/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3whhvjse2u.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/t/l/e/8-rgt-m-7-doctor-extra-soft-grey-original-imahfb3wzrbdzt6x.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Slippers Orthopedic",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "DOCTOR EXTRA SOFT Men Men Orthopedic Diabetic Thong Slippers with Arch Support Soft Cushion Anti-Skid Slippers"
+                         },
+        "source":  "https://www.flipkart.com/doctor-extra-soft-men-orthopedic-diabetic-thong-slippers-arch-support-soft-cushion-anti-skid-slippers/p/itm02aefba9366e0?pid=SFFHGZHNBHJX4K8U"
+    },
+    {
+        "id":  0,
+        "name":  "Men Slippers Lightweight",
+        "category":  "Fashion",
+        "brand":  "Lite Hawks",
+        "price":  195,
+        "originalPrice":  264,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Lightweight men slippers with soft cushioning, value pricing, and real images across multiple angles.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/u/u/f/7-lh-805-lite-hawks-blue-original-imah6e3rd8qep9p2.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/u/u/f/7-lh-805-lite-hawks-blue-original-imah6e3rd8qep9p2.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/f/o/7-lh-805-lite-hawks-blue-original-imah6e3rhshvzdgu.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/g/c/l/7-lh-805-lite-hawks-blue-original-imah6e3r42v6tfv8.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/s/g/y/7-lh-805-lite-hawks-blue-original-imah6e3r7brvqgch.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/n/v/i/7-lh-805-lite-hawks-blue-original-imah6e3rjz7a2f3e.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/u/u/f/7-lh-805-lite-hawks-blue-original-imah6e3rd8qep9p2.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/u/u/f/7-lh-805-lite-hawks-blue-original-imah6e3rd8qep9p2.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/u/u/f/7-lh-805-lite-hawks-blue-original-imah6e3rd8qep9p2.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/u/u/f/7-lh-805-lite-hawks-blue-original-imah6e3rd8qep9p2.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/f/o/7-lh-805-lite-hawks-blue-original-imah6e3rhshvzdgu.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/g/c/l/7-lh-805-lite-hawks-blue-original-imah6e3r42v6tfv8.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Slippers Lightweight",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Lite Hawks Men Doctor Recommended Orthopedic |Lightweight|Pain Relief|Flip Flop for Boys Slippers"
+                         },
+        "source":  "https://www.flipkart.com/lite-hawks-men-doctor-recommended-orthopedic-lightweight-pain-relief-flip-flop-boys-slippers/p/itmf3c5b9774f8da?pid=SFFH6URPJVQ6U7DD"
+    },
+    {
+        "id":  0,
+        "name":  "Men Running Shoes Trail",
+        "category":  "Fashion",
+        "brand":  "CLYMB",
+        "price":  445,
+        "originalPrice":  601,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "All-round men running shoes with a sporty design, real gallery images, and a practical mid-budget option.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/4/w/v/6-cosko-clymb-blue-original-imah7wzgzzv4zzfw.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/4/w/v/6-cosko-clymb-blue-original-imah7wzgzzv4zzfw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/y/y/p/6-cosko-clymb-blue-original-imah7wzgxj2rpx8e.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/f/d/o/6-cosko-clymb-blue-original-imah7wzgkgzevrg6.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/l/e/r/6-cosko-clymb-blue-original-imah7wzg6rskeuj9.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/4/w/l/6-cosko-clymb-blue-original-imah7wzgwwr9t5ga.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/4/w/v/6-cosko-clymb-blue-original-imah7wzgzzv4zzfw.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/4/w/v/6-cosko-clymb-blue-original-imah7wzgzzv4zzfw.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/4/w/v/6-cosko-clymb-blue-original-imah7wzgzzv4zzfw.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/4/w/v/6-cosko-clymb-blue-original-imah7wzgzzv4zzfw.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/y/y/p/6-cosko-clymb-blue-original-imah7wzgxj2rpx8e.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/f/d/o/6-cosko-clymb-blue-original-imah7wzgkgzevrg6.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Running Shoes Trail",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "CLYMB Lace up Waterproof blue shoes for running, walking, gym, trekking, hiking Running Shoes For Men"
+                         },
+        "source":  "https://www.flipkart.com/clymb-lace-up-waterproof-blue-shoes-running-walking-gym-trekking-hiking-men/p/itm0dbd447e5d6d2?pid=SHOH6Y6FFYJYB53N"
+    },
+    {
+        "id":  0,
+        "name":  "Men Sneakers Outdoor",
+        "category":  "Fashion",
+        "brand":  "LIGERONATION",
+        "price":  400,
+        "originalPrice":  540,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Casual outdoor sneakers for men with a versatile style, real images, and an easy low-mid price point.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/h/0/z/6-jumbo-ligeronation-black-original-imahf77yrxprfmvu.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/h/0/z/6-jumbo-ligeronation-black-original-imahf77yrxprfmvu.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/k/4/6-jumbo-ligeronation-black-original-imahf77yb5cphz7e.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/u/p/y/6-jumbo-ligeronation-black-original-imahf77yw4vmkaeh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/c/x/n/6-jumbo-ligeronation-black-original-imahf77yx8rrsjsh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/g/o/l/6-jumbo-ligeronation-black-original-imahf77y3gwutqvd.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/h/0/z/6-jumbo-ligeronation-black-original-imahf77yrxprfmvu.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/h/0/z/6-jumbo-ligeronation-black-original-imahf77yrxprfmvu.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/h/0/z/6-jumbo-ligeronation-black-original-imahf77yrxprfmvu.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/h/0/z/6-jumbo-ligeronation-black-original-imahf77yrxprfmvu.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/k/4/6-jumbo-ligeronation-black-original-imahf77yb5cphz7e.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/u/p/y/6-jumbo-ligeronation-black-original-imahf77yw4vmkaeh.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Sneakers Outdoor",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "LIGERONATION Ligero Summer \u0026 Outdoor Sneakers Cum Slip Ons | Casual Shoes | Canvas Shoes Slip On Sneakers For Men"
+                         },
+        "source":  "https://www.flipkart.com/ligeronation-ligero-summer-outdoor-sneakers-cum-slip-ons-casual-shoes-canvas-slip-men/p/itm4eb8750fb2eca?pid=SHOH5G6UH9MD5DVG"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Motion",
+        "category":  "Fashion",
+        "brand":  "Feet Runner",
+        "price":  570,
+        "originalPrice":  770,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  336,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/t/p/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gvhfxka9t.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/t/p/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gvhfxka9t.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/r/l/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gctnpkp5g.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/d/o/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5g469urvgd.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/o/h/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5ghvtznyqg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/p/r/j/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gnzetc4hy.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/h/t/p/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gvhfxka9t.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/h/t/p/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gvhfxka9t.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/h/t/p/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gvhfxka9t.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/t/p/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gvhfxka9t.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/r/l/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5gctnpkp5g.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/d/o/5-ftr-cherry-4140-5-feet-runner-cherry-original-imahkx5g469urvgd.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Motion",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Feet Runner Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/feet-runner-women-heels/p/itmf1ce1bd8111b7?pid=SNDH8BM5CZ9SGWTE"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Chic",
+        "category":  "Fashion",
+        "brand":  "Deals4you",
+        "price":  360,
+        "originalPrice":  487,
+        "rating":  3.8,
+        "stock":  50,
+        "reviewsCount":  653,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/l/w/-original-imahgyc4frxwzjzh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/e/m/c/-original-imahgyc4gya6trvg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1000/1340/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/y/m/f/-original-imahgyc4vsgrtynv.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/l/w/-original-imahgyc4frxwzjzh.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/e/m/c/-original-imahgyc4gya6trvg.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Chic",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Deals4you Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/deals4you-women-heels/p/itmdd4d21da71731?pid=SNDH6VG7W4MX8JGE"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Premium",
+        "category":  "Fashion",
+        "brand":  "ANOUK",
+        "price":  780,
+        "originalPrice":  1053,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/8/a/i/6-8209-39-anouk-multicolor-original-imahkhm2xmsy5dpp.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/8/a/i/6-8209-39-anouk-multicolor-original-imahkhm2xmsy5dpp.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/l/y/3-8209-36-anouk-multicolor-original-imahkhmfjzxwyfmm.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/k/o/3-8209-36-anouk-multicolor-original-imahkhhyjp2c3ygz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/9/k/p/3-8209-36-anouk-multicolor-original-imahkhhyhfehzfdm.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/u/h/7/6-8209-39-anouk-multicolor-original-imahkhmytcz4gbgz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/8/a/i/6-8209-39-anouk-multicolor-original-imahkhm2xmsy5dpp.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/8/a/i/6-8209-39-anouk-multicolor-original-imahkhm2xmsy5dpp.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/8/a/i/6-8209-39-anouk-multicolor-original-imahkhm2xmsy5dpp.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/8/a/i/6-8209-39-anouk-multicolor-original-imahkhm2xmsy5dpp.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/l/y/3-8209-36-anouk-multicolor-original-imahkhmfjzxwyfmm.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/h/k/o/3-8209-36-anouk-multicolor-original-imahkhhyjp2c3ygz.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "ANOUK Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/anouk-women-heels/p/itma46ec9bd9ff60?pid=SNDHKHNHSFPPE6QU"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Style",
+        "category":  "Fashion",
+        "brand":  "BLINDER",
+        "price":  702,
+        "originalPrice":  948,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/f/g/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rq2xhqffn5.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/f/g/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rq2xhqffn5.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/8/z/3/4-bbd-94-heel-stylish-4-blinder-copper-original-imahh3rqsebkmhwx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/c/j/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rqvf6wrdce.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/i/q/k/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rqdyyrbugd.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/l/w/5/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rqjszbrxff.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/w/f/g/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rq2xhqffn5.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/w/f/g/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rq2xhqffn5.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/w/f/g/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rq2xhqffn5.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/f/g/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rq2xhqffn5.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/8/z/3/4-bbd-94-heel-stylish-4-blinder-copper-original-imahh3rqsebkmhwx.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/c/j/5-bbd-94-heel-stylish-5-blinder-copper-original-imahh3rqvf6wrdce.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Style",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "BLINDER Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/blinder-women-heels/p/itma5810aea0fb4a?pid=SNDHH3RQGZE2XWET"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Comfort",
+        "category":  "Fashion",
+        "brand":  "Avivastyle",
+        "price":  388,
+        "originalPrice":  524,
+        "rating":  4.2,
+        "stock":  50,
+        "reviewsCount":  42,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/p/q/-original-imahgyc4zbwchgng.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/p/q/-original-imahgyc4zbwchgng.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/o/d/-original-imahgyc43fxmgh8n.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/b/k/-original-imahgyc42z7xgqqj.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/o/k/y/-original-imahgyc4yzcd4u3a.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/j/y/-original-imahgyc4zsud5prx.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/a/p/q/-original-imahgyc4zbwchgng.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/a/p/q/-original-imahgyc4zbwchgng.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/a/p/q/-original-imahgyc4zbwchgng.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/p/q/-original-imahgyc4zbwchgng.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/n/o/d/-original-imahgyc43fxmgh8n.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/b/k/-original-imahgyc42z7xgqqj.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Comfort",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Avivastyle Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/avivastyle-women-heels/p/itmc170df8e921cc?pid=SNDHYP86GCJJJHZV"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Sparkle",
+        "category":  "Fashion",
+        "brand":  "Picson",
+        "price":  584,
+        "originalPrice":  789,
+        "rating":  4.2,
+        "stock":  50,
+        "reviewsCount":  5,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/a/m/8-1001-crm-8-picson-cream-1001-original-imahhqccehxdawwg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/a/m/8-1001-crm-8-picson-cream-1001-original-imahhqccehxdawwg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/k/d/4-1001-crm-4-picson-cream-1001-original-imahhqccudwzbc69.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/n/v/8-1001-crm-8-picson-cream-1001-original-imahhqccjhfz6fuk.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/5/k/t/4-1001-crm-4-picson-cream-1001-original-imahhqcczhwhvy2x.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/t/p/j/8-1001-crm-8-picson-cream-1001-original-imahhqccgkzqvtz7.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/a/a/m/8-1001-crm-8-picson-cream-1001-original-imahhqccehxdawwg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/a/a/m/8-1001-crm-8-picson-cream-1001-original-imahhqccehxdawwg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/a/a/m/8-1001-crm-8-picson-cream-1001-original-imahhqccehxdawwg.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/a/m/8-1001-crm-8-picson-cream-1001-original-imahhqccehxdawwg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/k/d/4-1001-crm-4-picson-cream-1001-original-imahhqccudwzbc69.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/n/v/8-1001-crm-8-picson-cream-1001-original-imahhqccjhfz6fuk.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Sparkle",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Picson Sparkle Comfort | Premium Quality Extra Soft Heels for Women Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/picson-sparkle-comfort-premium-quality-extra-soft-heels-women/p/itm51f3ae4df0c8e?pid=SNDHHPEZYFMY6RTY"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Classic",
+        "category":  "Fashion",
+        "brand":  "SHANWEAR",
+        "price":  391,
+        "originalPrice":  528,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  49,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/y/v/l/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5ccbb4pn56m.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/9/0/s/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5ccntgzwgpz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1000/1340/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/i/k/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5cc5g3jehrg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/y/v/l/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5ccbb4pn56m.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/9/0/s/3-where-comfort-meets-couture-shine-with-every-step-3-shanwear-original-imahj5ccntgzwgpz.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Classic",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "SHANWEAR Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/shanwear-women-heels/p/itm09ecbe89eaa44?pid=SNDHGXZRHC2S8EVT"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Daily",
+        "category":  "Fashion",
+        "brand":  "Gerief",
+        "price":  290,
+        "originalPrice":  392,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  256,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/7/h/-original-imahjyttqpyj4hfz.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/7/h/-original-imahjyttqpyj4hfz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/l/a/b/-original-imahkyh8jznywkvx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/q/j/w/-original-imahjyz7cgjwgjhp.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/b/a/f/-original-imahjyttgmschdsy.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/d/h/-original-imahkyh8rdhngsdf.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/j/7/h/-original-imahjyttqpyj4hfz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/j/7/h/-original-imahjyttqpyj4hfz.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/j/7/h/-original-imahjyttqpyj4hfz.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/7/h/-original-imahjyttqpyj4hfz.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/l/a/b/-original-imahkyh8jznywkvx.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/q/j/w/-original-imahjyz7cgjwgjhp.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Daily",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Gerief Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/gerief-women-heels/p/itmb3a9706335826?pid=SNDHCZPRHFEEBXX6"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Party",
+        "category":  "Fashion",
+        "brand":  "MICCASO",
+        "price":  279,
+        "originalPrice":  377,
+        "rating":  3.7,
+        "stock":  50,
+        "reviewsCount":  48,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/i/v/7-mic122purple07-7-0-miccaso-purple-original-imahh6gttfmghudw.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/n/r/7-mic122purple07-7-0-miccaso-purple-original-imahh6gtev5aa2mv.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1000/1340/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/g/h/v/6-mic122purple06-6-0-miccaso-purple-original-imahh6gt4ghurtpf.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/i/v/7-mic122purple07-7-0-miccaso-purple-original-imahh6gttfmghudw.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/z/n/r/7-mic122purple07-7-0-miccaso-purple-original-imahh6gtev5aa2mv.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Party",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "MICCASO Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/miccaso-women-heels/p/itm53b5317978d03?pid=SNDHHAUFDGTWHJDW"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Budget",
+        "category":  "Fashion",
+        "brand":  "HEELIXIR",
+        "price":  218,
+        "originalPrice":  295,
+        "rating":  4.1,
+        "stock":  50,
+        "reviewsCount":  8,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/d/t/f/7-white-panji-01-7-0-heelixir-white-original-imahgs7cpqaks3se.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/q/h/g/3-white-panji-01-3-0-heelixir-white-original-imahgs7c6yv5fveg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=60",
+                       "https://rukminim2.flixcart.com/image/500/670/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1000/1340/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/m/3/6-white-panji-01-6-0-heelixir-white-original-imahgs7cjsf8rz9g.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/d/t/f/7-white-panji-01-7-0-heelixir-white-original-imahgs7cpqaks3se.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/q/h/g/3-white-panji-01-3-0-heelixir-white-original-imahgs7c6yv5fveg.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Budget",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "HEELIXIR Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/heelixir-women-heels/p/itm40329037577eb?pid=SNDHGRVNE8DTUGGG"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Trend",
+        "category":  "Fashion",
+        "brand":  "RAVIS",
+        "price":  332,
+        "originalPrice":  449,
+        "rating":  3.7,
+        "stock":  50,
+        "reviewsCount":  383,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/m/6/6-fokni-heel-6-ravis-cream-original-imahgvhdzh4swfg2.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/m/6/6-fokni-heel-6-ravis-cream-original-imahgvhdzh4swfg2.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/h/n/6-fokni-heel-6-ravis-cream-original-imahgvhdsp78t6ah.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/x/t/6-fokni-heel-6-ravis-cream-original-imahgvhd69thjbzc.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/4/x/i/6-fokni-heel-6-ravis-cream-original-imahgvhdwydtja7v.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/u/t/t/6-fokni-heel-6-ravis-cream-original-imahgvhdcfmzzkka.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/s/m/6/6-fokni-heel-6-ravis-cream-original-imahgvhdzh4swfg2.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/s/m/6/6-fokni-heel-6-ravis-cream-original-imahgvhdzh4swfg2.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/s/m/6/6-fokni-heel-6-ravis-cream-original-imahgvhdzh4swfg2.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/m/6/6-fokni-heel-6-ravis-cream-original-imahgvhdzh4swfg2.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/w/h/n/6-fokni-heel-6-ravis-cream-original-imahgvhdsp78t6ah.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/c/x/t/6-fokni-heel-6-ravis-cream-original-imahgvhd69thjbzc.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Trend",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "RAVIS Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/ravis-women-heels/p/itm8d5b81df99858?pid=SNDHFW3F8GQ4CYZR"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Signature",
+        "category":  "Fashion",
+        "brand":  "LAVIE",
+        "price":  699,
+        "originalPrice":  944,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  41,
+        "description":  "Women heels with real multi-angle gallery images, balanced pricing, and more variety added for the NamshyCart heels collection.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/m/t/a/8-lp-sp1120-cream-41-0-lavie-cream-original-imahfsd3e8ds7hhn.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/m/t/a/8-lp-sp1120-cream-41-0-lavie-cream-original-imahfsd3e8ds7hhn.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/d/0/r/7-lp-sp1120-cream-7-0-zuery-cream-original-imahfmw7nrpc8y4n.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/g/o/7-lp-sp1120-cream-7-0-zuery-cream-original-imahfmw7w2hzcy2a.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/3/n/k/7-5-lp-sp1120-cream-7-5-zuery-cream-original-imahfmw7yq7aghjg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/8/8/n/7-5-lp-sp1120-cream-7-5-zuery-cream-original-imahfmw7t4gdbg9t.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/m/t/a/8-lp-sp1120-cream-41-0-lavie-cream-original-imahfsd3e8ds7hhn.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/m/t/a/8-lp-sp1120-cream-41-0-lavie-cream-original-imahfsd3e8ds7hhn.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/m/t/a/8-lp-sp1120-cream-41-0-lavie-cream-original-imahfsd3e8ds7hhn.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/m/t/a/8-lp-sp1120-cream-41-0-lavie-cream-original-imahfsd3e8ds7hhn.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/d/0/r/7-lp-sp1120-cream-7-0-zuery-cream-original-imahfmw7nrpc8y4n.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/x/g/o/7-lp-sp1120-cream-7-0-zuery-cream-original-imahfmw7w2hzcy2a.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Signature",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "LAVIE Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/lavie-women-heels/p/itm151c1779c23c7?pid=SNDHFSD3HAMQNTE2"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Roadster Premium",
+        "category":  "Fashion",
+        "brand":  "Roadster",
+        "price":  799,
+        "originalPrice":  1079,
+        "rating":  4,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Premium-brand women heels added to strengthen the curated catalog with real product galleries and a more elevated style option.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/v/d/5-rd5274-38-roadster-pink-original-imahhenkgxrkszht.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/v/d/5-rd5274-38-roadster-pink-original-imahhenkgxrkszht.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/m/p/5-rd5274-38-roadster-pink-original-imahhenjspgwnhes.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/g/t/5-rd5274-38-roadster-pink-original-imahhenjznfav6wj.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/s/k/b/8-5274-41-rindas-pink-original-imahhenaknjumnfz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/m/f/x/8-5274-41-rindas-pink-original-imahhenazbxyhj36.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/a/v/d/5-rd5274-38-roadster-pink-original-imahhenkgxrkszht.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/a/v/d/5-rd5274-38-roadster-pink-original-imahhenkgxrkszht.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/a/v/d/5-rd5274-38-roadster-pink-original-imahhenkgxrkszht.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/a/v/d/5-rd5274-38-roadster-pink-original-imahhenkgxrkszht.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/j/m/p/5-rd5274-38-roadster-pink-original-imahhenjspgwnhes.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/2/g/t/5-rd5274-38-roadster-pink-original-imahhenjznfav6wj.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Roadster Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "Roadster Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/roadster-women-heels/p/itm3302207796185?pid=SNDHHFPSUJFAZ7WM"
+    },
+    {
+        "id":  0,
+        "name":  "Women Heels Metro Premium",
+        "category":  "Fashion",
+        "brand":  "METRO",
+        "price":  1099,
+        "originalPrice":  1484,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Premium-brand women heels added to strengthen the curated catalog with real product galleries and a more elevated style option.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/p/y/u/-original-imahfttw8aky9dmg.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/p/y/u/-original-imahfttw8aky9dmg.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/b/j/-original-imahftvhzwh2abca.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/3/c/-original-imahftvhz9hgf7mx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/p/v/k/-original-imahftvhfcq8ehxh.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/d/8/n/-original-imahftvhtzfzdx3x.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/sandal/p/y/u/-original-imahfttw8aky9dmg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/sandal/p/y/u/-original-imahfttw8aky9dmg.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/sandal/p/y/u/-original-imahfttw8aky9dmg.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/p/y/u/-original-imahfttw8aky9dmg.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/f/b/j/-original-imahftvhzwh2abca.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/sandal/6/3/c/-original-imahftvhz9hgf7mx.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Heels Metro Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "METRO Women Heels"
+                         },
+        "source":  "https://www.flipkart.com/metro-women-heels/p/itmed83612368668?pid=SNDGJ4Z72ZGFZQKF"
+    },
+    {
+        "id":  0,
+        "name":  "Women Sneakers Red Tape Premium",
+        "category":  "Fashion",
+        "brand":  "REDTAPE",
+        "price":  1139,
+        "originalPrice":  1538,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Premium-brand sneakers added for a more elevated shoes collection with real product galleries and distinct non-duplicate catalog coverage.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/j/s/b/-original-imahdh5gygqgnnnz.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/j/s/b/-original-imahdh5gygqgnnnz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/v/t/l/-original-imahdh5gsn8jjujf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/m/g/-original-imahdh5g7f8wmc28.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/1/4/y/-original-imahdh5gczkqhqrx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/g/6/c/-original-imahdh5g5txzpyfg.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/j/s/b/-resized-2-original-imahdh5gygqgnnnz.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/j/s/b/-original-imahdh5gygqgnnnz.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/j/s/b/-original-imahdh5gygqgnnnz.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/j/s/b/-original-imahdh5gygqgnnnz.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/v/t/l/-original-imahdh5gsn8jjujf.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/q/m/g/-original-imahdh5g7f8wmc28.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Sneakers Red Tape Premium",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "RED TAPE Sneakers For Women"
+                         },
+        "source":  "https://www.flipkart.com/red-tape-sneakers-women/p/itm307ad354d2c6b?pid=SHOHAFMJSFX3KXNT"
+    },
+    {
+        "id":  0,
+        "name":  "Women Sneakers Puma Luxe",
+        "category":  "Fashion",
+        "brand":  "PUMA",
+        "price":  3299,
+        "originalPrice":  4454,
+        "rating":  3.9,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Premium-brand sneakers added for a more elevated shoes collection with real product galleries and distinct non-duplicate catalog coverage.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/y/q/6/-original-imahddzfxvb3ehub.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/y/q/6/-original-imahddzfxvb3ehub.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/l/j/e/-original-imahddywvnrxrnuf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/3/m/p/-original-imahddywjfdftfyx.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/l/c/e/-original-imahddywrdzgkyg4.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/1/s/z/-original-imahddyvq8yd7eck.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/y/q/6/-original-imahddzfxvb3ehub.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/shoe/y/q/6/-original-imahddzfxvb3ehub.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/shoe/y/q/6/-original-imahddzfxvb3ehub.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/y/q/6/-original-imahddzfxvb3ehub.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/l/j/e/-original-imahddywvnrxrnuf.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/shoe/3/m/p/-original-imahddywjfdftfyx.jpeg?q=70"
+                          ],
+        "isTrending":  false,
+        "isDeal":  true,
+        "sizes":  [
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8"
+                  ],
+        "measurements":  {
+                             "audience":  "Women",
+                             "type":  "Women Sneakers Puma Luxe",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "PUMA Court Classic Lux Wns Res Sneakers For Women"
+                         },
+        "source":  "https://www.flipkart.com/puma-court-classic-lux-wns-res-sneakers-women/p/itm4f38aca7b0d67?pid=SHOH9H24CXKZQ6MY"
+    },
+    {
+        "id":  0,
+        "name":  "Men Slides Puma Softride",
+        "category":  "Fashion",
+        "brand":  "PUMA",
+        "price":  1595,
+        "originalPrice":  2154,
+        "rating":  4.3,
+        "stock":  50,
+        "reviewsCount":  0,
+        "description":  "Premium-brand slides added for a stronger slippers collection with real product galleries and better brand variety.",
+        "image":  "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/w/w/9/-original-imah5vj8gk9gsthf.jpeg?q=70",
+        "images":  [
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/w/w/9/-original-imah5vj8gk9gsthf.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/c/m/c/-original-imah5vj8paadaxbt.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/p/y/k/-original-imah5vj8ccgkyrya.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/d/n/0/-original-imah5vj8jzqvcnmz.jpeg?q=70",
+                       "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/q/s/k/-original-imah5vj8rhunvk3g.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/w/w/9/-original-imah5vj8gk9gsthf.jpeg?q=70",
+                       "https://rukminim2.flixcart.com/image/800/1070/xif0q/slipper-flip-flop/w/w/9/-original-imah5vj8gk9gsthf.jpeg?q=80",
+                       "https://rukminim2.flixcart.com/image/1600/2140/xif0q/slipper-flip-flop/w/w/9/-original-imah5vj8gk9gsthf.jpeg?q=60"
+                   ],
+        "featureImages":  [
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/w/w/9/-original-imah5vj8gk9gsthf.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/c/m/c/-original-imah5vj8paadaxbt.jpeg?q=70",
+                              "https://rukmini1.flixcart.com/image/1500/1500/xif0q/slipper-flip-flop/p/y/k/-original-imah5vj8ccgkyrya.jpeg?q=70"
+                          ],
+        "isTrending":  true,
+        "isDeal":  true,
+        "sizes":  [
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11"
+                  ],
+        "measurements":  {
+                             "audience":  "Men",
+                             "type":  "Men Slides Puma Softride",
+                             "source":  "Flipkart",
+                             "scrapedTitle":  "PUMA Men Softride Slide V Slides"
+                         },
+        "source":  "https://www.flipkart.com/puma-men-softride-slide-v-slides/p/itm3787780dfd10e?pid=SFFHYYZ4BYDJ67VA"
+    }
 ]
